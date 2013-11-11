@@ -21,6 +21,8 @@
 		CDFD360A182E628300305665 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CDFD35EC182E628300305665 /* UIKit.framework */; };
 		CDFD3612182E628300305665 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = CDFD3610182E628300305665 /* InfoPlist.strings */; };
 		CDFD3614182E628300305665 /* MutualAuthTestHarnessTests.m in Sources */ = {isa = PBXBuildFile; fileRef = CDFD3613182E628300305665 /* MutualAuthTestHarnessTests.m */; };
+		CDFD361F182E673800305665 /* NSString+HashCategory.m in Sources */ = {isa = PBXBuildFile; fileRef = CDFD361E182E673800305665 /* NSString+HashCategory.m */; };
+		CDFD3621182FC2AB00305665 /* pluralsight.com.der in Resources */ = {isa = PBXBuildFile; fileRef = CDFD3620182FC2AB00305665 /* pluralsight.com.der */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -53,6 +55,9 @@
 		CDFD360F182E628300305665 /* MutualAuthTestHarnessTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "MutualAuthTestHarnessTests-Info.plist"; sourceTree = "<group>"; };
 		CDFD3611182E628300305665 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		CDFD3613182E628300305665 /* MutualAuthTestHarnessTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MutualAuthTestHarnessTests.m; sourceTree = "<group>"; };
+		CDFD361D182E673800305665 /* NSString+HashCategory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+HashCategory.h"; sourceTree = "<group>"; };
+		CDFD361E182E673800305665 /* NSString+HashCategory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+HashCategory.m"; sourceTree = "<group>"; };
+		CDFD3620182FC2AB00305665 /* pluralsight.com.der */ = {isa = PBXFileReference; lastKnownFileType = file; path = pluralsight.com.der; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -112,6 +117,7 @@
 		CDFD35EE182E628300305665 /* MutualAuthTestHarness */ = {
 			isa = PBXGroup;
 			children = (
+				CDFD3620182FC2AB00305665 /* pluralsight.com.der */,
 				CDFD35F7182E628300305665 /* AppDelegate.h */,
 				CDFD35F8182E628300305665 /* AppDelegate.m */,
 				CDFD35FA182E628300305665 /* Main.storyboard */,
@@ -119,6 +125,8 @@
 				CDFD35FE182E628300305665 /* ViewController.m */,
 				CDFD3600182E628300305665 /* Images.xcassets */,
 				CDFD35EF182E628300305665 /* Supporting Files */,
+				CDFD361D182E673800305665 /* NSString+HashCategory.h */,
+				CDFD361E182E673800305665 /* NSString+HashCategory.m */,
 			);
 			path = MutualAuthTestHarness;
 			sourceTree = "<group>";
@@ -228,6 +236,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CDFD3621182FC2AB00305665 /* pluralsight.com.der in Resources */,
 				CDFD3601182E628300305665 /* Images.xcassets in Resources */,
 				CDFD35F3182E628300305665 /* InfoPlist.strings in Resources */,
 				CDFD35FC182E628300305665 /* Main.storyboard in Resources */,
@@ -252,6 +261,7 @@
 				CDFD35FF182E628300305665 /* ViewController.m in Sources */,
 				CDFD35F9182E628300305665 /* AppDelegate.m in Sources */,
 				CDFD35F5182E628300305665 /* main.m in Sources */,
+				CDFD361F182E673800305665 /* NSString+HashCategory.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

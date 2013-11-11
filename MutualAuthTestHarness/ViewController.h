@@ -10,4 +10,16 @@
 
 @interface ViewController : UIViewController
 
+@property (retain, nonatomic) NSURLConnection *connection;
+
+//OSStatus extractIdentityAndTrust(CFDataRef inPKCS12Data, SecIdentityRef *outIdentity, SecTrustRef *outTrust, CFStringRef keyPassword);
+
+OSStatus extractIdentityAndTrust(CFDataRef inPKCS12Data, SecIdentityRef *outIdentity, SecTrustRef *outTrust, CFStringRef keyPassword);
+
+/*
+- (OSStatus*) extractIdentityAndTrust(CFDataRef inPKCS12Data,
+                                      SecIdentityRef *outIdentity,
+                                      SecTrustRef *outTrust,
+                                      CFStringRef keyPassword);
+*/
 @end
