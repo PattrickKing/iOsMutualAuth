@@ -84,29 +84,67 @@
     if (trustServer) {
         
         // gets a certificate from local resources
-        NSString *thePath = [[NSBundle mainBundle] pathForResource:@"MyCertificate" ofType:@"pfx"];
+        NSString *thePath = [[NSBundle mainBundle] pathForResource:@"pattrickking" ofType:@"pfx"];
         NSData *PKCS12Data = [[NSData alloc] initWithContentsOfFile:thePath];
         CFDataRef inPKCS12Data = (__bridge CFDataRef)PKCS12Data;
         
-        CFStringRef password = CFSTR("userA");
+        CFStringRef password = CFSTR("passphrase");
         SecIdentityRef identity;
         SecTrustRef trust;
         
+        // Import .p12 data
+        CFArrayRef keyref = NULL;
+        OSStatus importStatus = SecPKCS12Import(inPKCS12Data,
+                                          (__bridge CFDictionaryRef)[NSDictionary
+                                                                     dictionaryWithObject:@"passphrase"
+                                                                     forKey:(__bridge id)kSecImportExportPassphrase],
+                                          &keyref);
+        if (importStatus != noErr) {
+            NSLog(@"SecPKCS12Import failed.");
+            return;
+        }
+        
+        // Identity
+        CFDictionaryRef identityDict = CFArrayGetValueAtIndex(keyref, 0);
+        SecIdentityRef identityRef = (SecIdentityRef)CFDictionaryGetValue(identityDict,
+                                                                          kSecImportItemIdentity);
+        
+        // Cert
+        SecCertificateRef cert = NULL;
+        OSStatus copyStatus = SecIdentityCopyCertificate(identityRef, &cert);
+        
+        if (copyStatus != noErr) {
+            NSLog(@"SecIdentityCopyCertificate failed.");
+            return;
+        }
+        
+        
         // extract the identity and trust from the certificate
-        [self extractIdentityAndTrust :inPKCS12Data :&identity :&trust :password];
+        OSStatus extractIdentityStatus = [self extractIdentityAndTrust :inPKCS12Data :&identity :&trust :password];
+        //[self extractIdentity :inPKCS12Data :&identity];
         
-        SecCertificateRef certificate = NULL;
-        SecIdentityCopyCertificate (identity, &certificate);
+        if(extractIdentityStatus)
+        {
+            SecCertificateRef certificate = NULL;
+            OSStatus status = SecIdentityCopyCertificate (identity, &certificate);
+            
+            if (status) {
+                NSLog(@"SecIdentityCopyCertificate failed.\n");
+            }
+            
+            const void *certs[] = {certificate};
+            CFArrayRef certArray = CFArrayCreate(kCFAllocatorDefault, certs, 1, NULL);
+            
+            // create a credential from the certificate and identity, then reply to the challenge with the credential
+            NSURLCredential *credential = [NSURLCredential credentialWithIdentity:identity certificates:(__bridge NSArray*)certArray persistence:NSURLCredentialPersistencePermanent];
+            
+            [challenge.sender useCredential:credential forAuthenticationChallenge:challenge];
+            
+        } else {
+            [challenge.sender cancelAuthenticationChallenge:challenge];
+        }
+
         
-        const void *certs[] = {certificate};
-        CFArrayRef certArray = CFArrayCreate(kCFAllocatorDefault, certs, 1, NULL);
-        
-        // create a credential from the certificate and identity, then reply to the challenge with the credential
-        NSURLCredential *credential = [NSURLCredential credentialWithIdentity:identity certificates:(__bridge NSArray*)certArray persistence:NSURLCredentialPersistencePermanent];
-        
-        [challenge.sender useCredential:credential forAuthenticationChallenge:challenge];
-        
-        //[challenge.sender useCredential:[NSURLCredential credentialForTrust:challenge.protectionSpace.serverTrust] forAuthenticationChallenge:challenge];
         
     } else {
         
@@ -153,11 +191,40 @@
         *outTrust = (SecTrustRef)tempTrust;
     }
     
-    if (optionsDictionary)                                      // 4
+    if (optionsDictionary) {
         CFRelease(optionsDictionary);
+    }
     
-    if (items)
+    if (items) {
         CFRelease(items);
+    }
+    
+    return securityError;
+}
+
+- (OSStatus)extractIdentity:(CFDataRef)inP12Data :(SecIdentityRef*)identity {
+    OSStatus securityError = errSecSuccess;
+    
+    CFStringRef password = CFSTR("passphrase");
+    const void *keys[] = { kSecImportExportPassphrase };
+    const void *values[] = { password };
+    
+    CFDictionaryRef options = CFDictionaryCreate(NULL, keys, values, 1, NULL, NULL);
+    
+    CFArrayRef items = CFArrayCreate(NULL, 0, 0, NULL);
+    securityError = SecPKCS12Import(inP12Data, options, &items);
+    
+    if (securityError == 0) {
+        CFDictionaryRef ident = CFArrayGetValueAtIndex(items,0);
+        const void *tempIdentity = NULL;
+        tempIdentity = CFDictionaryGetValue(ident, kSecImportItemIdentity);
+        *identity = (SecIdentityRef)tempIdentity;
+    }
+    
+    if (options) {
+        CFRelease(options);
+    }
+    
     return securityError;
 }
 

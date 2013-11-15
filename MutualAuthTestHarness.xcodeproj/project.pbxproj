@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		CDA94FA51832403E0077FAD5 /* pattrickking.pfx in Resources */ = {isa = PBXBuildFile; fileRef = CDA94FA41832403E0077FAD5 /* pattrickking.pfx */; };
 		CDFD35E9182E628300305665 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CDFD35E8182E628300305665 /* Foundation.framework */; };
 		CDFD35EB182E628300305665 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CDFD35EA182E628300305665 /* CoreGraphics.framework */; };
 		CDFD35ED182E628300305665 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CDFD35EC182E628300305665 /* UIKit.framework */; };
@@ -36,6 +37,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		CDA94FA41832403E0077FAD5 /* pattrickking.pfx */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = pattrickking.pfx; sourceTree = "<group>"; };
 		CDFD35E5182E628300305665 /* MutualAuthTestHarness.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MutualAuthTestHarness.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CDFD35E8182E628300305665 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		CDFD35EA182E628300305665 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -117,6 +119,7 @@
 		CDFD35EE182E628300305665 /* MutualAuthTestHarness */ = {
 			isa = PBXGroup;
 			children = (
+				CDA94FA41832403E0077FAD5 /* pattrickking.pfx */,
 				CDFD3620182FC2AB00305665 /* pluralsight.com.der */,
 				CDFD35F7182E628300305665 /* AppDelegate.h */,
 				CDFD35F8182E628300305665 /* AppDelegate.m */,
@@ -238,6 +241,7 @@
 			files = (
 				CDFD3621182FC2AB00305665 /* pluralsight.com.der in Resources */,
 				CDFD3601182E628300305665 /* Images.xcassets in Resources */,
+				CDA94FA51832403E0077FAD5 /* pattrickking.pfx in Resources */,
 				CDFD35F3182E628300305665 /* InfoPlist.strings in Resources */,
 				CDFD35FC182E628300305665 /* Main.storyboard in Resources */,
 			);
@@ -470,6 +474,7 @@
 				CDFD3619182E628300305665 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		CDFD361A182E628300305665 /* Build configuration list for PBXNativeTarget "MutualAuthTestHarnessTests" */ = {
 			isa = XCConfigurationList;
@@ -478,6 +483,7 @@
 				CDFD361C182E628300305665 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
