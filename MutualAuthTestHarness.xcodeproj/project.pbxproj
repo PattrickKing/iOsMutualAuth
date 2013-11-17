@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		CD2AB77A1838E5E3002D7764 /* pwk.p12 in Resources */ = {isa = PBXBuildFile; fileRef = CD2AB7791838E5E3002D7764 /* pwk.p12 */; };
+		CD2AB77C1838E76E002D7764 /* pwk-compat.p12 in Resources */ = {isa = PBXBuildFile; fileRef = CD2AB77B1838E76E002D7764 /* pwk-compat.p12 */; };
 		CDA94FA51832403E0077FAD5 /* pattrickking.pfx in Resources */ = {isa = PBXBuildFile; fileRef = CDA94FA41832403E0077FAD5 /* pattrickking.pfx */; };
 		CDFD35E9182E628300305665 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CDFD35E8182E628300305665 /* Foundation.framework */; };
 		CDFD35EB182E628300305665 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CDFD35EA182E628300305665 /* CoreGraphics.framework */; };
@@ -37,6 +39,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		CD2AB7791838E5E3002D7764 /* pwk.p12 */ = {isa = PBXFileReference; lastKnownFileType = file; path = pwk.p12; sourceTree = "<group>"; };
+		CD2AB77B1838E76E002D7764 /* pwk-compat.p12 */ = {isa = PBXFileReference; lastKnownFileType = file; path = "pwk-compat.p12"; sourceTree = "<group>"; };
 		CDA94FA41832403E0077FAD5 /* pattrickking.pfx */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = pattrickking.pfx; sourceTree = "<group>"; };
 		CDFD35E5182E628300305665 /* MutualAuthTestHarness.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MutualAuthTestHarness.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CDFD35E8182E628300305665 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -119,6 +123,8 @@
 		CDFD35EE182E628300305665 /* MutualAuthTestHarness */ = {
 			isa = PBXGroup;
 			children = (
+				CD2AB77B1838E76E002D7764 /* pwk-compat.p12 */,
+				CD2AB7791838E5E3002D7764 /* pwk.p12 */,
 				CDA94FA41832403E0077FAD5 /* pattrickking.pfx */,
 				CDFD3620182FC2AB00305665 /* pluralsight.com.der */,
 				CDFD35F7182E628300305665 /* AppDelegate.h */,
@@ -239,11 +245,13 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CD2AB77A1838E5E3002D7764 /* pwk.p12 in Resources */,
 				CDFD3621182FC2AB00305665 /* pluralsight.com.der in Resources */,
 				CDFD3601182E628300305665 /* Images.xcassets in Resources */,
 				CDA94FA51832403E0077FAD5 /* pattrickking.pfx in Resources */,
 				CDFD35F3182E628300305665 /* InfoPlist.strings in Resources */,
 				CDFD35FC182E628300305665 /* Main.storyboard in Resources */,
+				CD2AB77C1838E76E002D7764 /* pwk-compat.p12 in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

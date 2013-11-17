@@ -10,11 +10,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "MutualAuthTestHarness/ViewController.m"
-            timestampString = "406029726.097061"
+            timestampString = "406391104.320674"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "245"
-            endingLineNumber = "245"
+            startingLineNumber = "257"
+            endingLineNumber = "257"
             landmarkName = "@implementation ViewController"
             landmarkType = "3">
          </BreakpointContent>
@@ -22,16 +22,16 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "MutualAuthTestHarness/ViewController.m"
-            timestampString = "405777419.275104"
+            timestampString = "406390230.001475"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "29"
-            endingLineNumber = "29"
-            landmarkName = "-viewDidLoad"
+            startingLineNumber = "114"
+            endingLineNumber = "114"
+            landmarkName = "-connection:didReceiveAuthenticationChallenge:"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
@@ -42,11 +42,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "MutualAuthTestHarness/ViewController.m"
-            timestampString = "405948531.823857"
+            timestampString = "406390230.001475"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "87"
-            endingLineNumber = "87"
+            startingLineNumber = "125"
+            endingLineNumber = "125"
             landmarkName = "-connection:didReceiveAuthenticationChallenge:"
             landmarkType = "5">
          </BreakpointContent>
