@@ -26,8 +26,13 @@
     [super viewDidLoad];
 	// Do any additional setup after loading the view, typically from a nib.
     
-    NSURL *url = [NSURL URLWithString: @"https://www.pluralsight.com/odata/Courses"];
+    //NSURL *url = [NSURL URLWithString: @"https://www.pluralsight.com/odata/Courses"];
+    //NSURL *url = [NSURL URLWithString: @"https://www.google.com"];
+    //NSURL *url = [NSURL URLWithString: @"http://0.0.0.0:4567/api"];
+    NSURL *url = [NSURL URLWithString: @"https://0.0.0.0:4567/api/users/5276666536ddce0db800009c"];
     NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:url];
+    [request setValue:@"application/json" forHTTPHeaderField:@"Accept"];
+    [self basicAuthForRequest: request withUsername: @"johnyoates@gmail.com" andPassword: @"70e2a2e2a9fe55f3563d5a198e3f853d15de7f93499f903772667a84630f14a2"];
     
     //initialize a connection from request
     NSURLConnection *connection = [[NSURLConnection alloc] initWithRequest:request delegate:self];
@@ -35,7 +40,29 @@
     
     //start the connection
     [connection start];
+}
+
+- (void)basicAuthForRequest:(NSMutableURLRequest *)request withUsername:(NSString *)username andPassword:(NSString *)password
+{
+    // Cast username and password as CFStringRefs via Toll-Free Bridging
+    CFStringRef usernameRef = (__bridge CFStringRef)username;
+    CFStringRef passwordRef = (__bridge CFStringRef)password;
     
+    // Reference properties of the NSMutableURLRequest
+    CFHTTPMessageRef authoriztionMessageRef = CFHTTPMessageCreateRequest(kCFAllocatorDefault, (__bridge CFStringRef)[request HTTPMethod], (__bridge CFURLRef)[request URL], kCFHTTPVersion1_1);
+    
+    // Encodes usernameRef and passwordRef in Base64
+    CFHTTPMessageAddAuthentication(authoriztionMessageRef, nil, usernameRef, passwordRef, kCFHTTPAuthenticationSchemeBasic, FALSE);
+    
+    // Creates the 'Basic - <encoded_username_and_password>' string for the HTTP header
+    CFStringRef authorizationStringRef = CFHTTPMessageCopyHeaderFieldValue(authoriztionMessageRef, CFSTR("Authorization"));
+    
+    // Add authorizationStringRef as value for 'Authorization' HTTP header
+    [request setValue:(__bridge NSString *)authorizationStringRef forHTTPHeaderField:@"Authorization"];
+    
+    // Cleanup
+    CFRelease(authorizationStringRef);
+    CFRelease(authoriztionMessageRef);
 }
 
 - (void)didReceiveMemoryWarning
@@ -44,13 +71,24 @@
     // Dispose of any resources that can be recreated.
 }
 
+-(void)connection:(NSURLConnection *)connection didReceiveData:(NSData *)data {
+    
+    NSString *dataString = [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding];
+    NSLog(@"Data Is: %@", dataString);
+}
+
 #pragma mark Get Server Cert From Application Bundle
 
 
 - (BOOL)shouldTrustProtectionSpace:(NSURLProtectionSpace *)protectionSpace {
     
+    if(protectionSpace.authenticationMethod == NSURLAuthenticationMethodClientCertificate) {
+        return YES;
+    }
+    
     // Load up the bundled server public key certificate.
-    NSString *certPath = [[NSBundle mainBundle] pathForResource:@"pluralsight.com" ofType:@"der"];
+    //NSString *certPath = [[NSBundle mainBundle] pathForResource:@"pluralsight.com" ofType:@"der"];
+    NSString *certPath = [[NSBundle mainBundle] pathForResource:@"buzzServer" ofType:@"der"];
     NSData *certData = [[NSData alloc] initWithContentsOfFile:certPath];
     CFDataRef certDataRef = (__bridge_retained CFDataRef)certData;
     SecCertificateRef cert = SecCertificateCreateWithData(NULL, certDataRef);
@@ -59,6 +97,10 @@
     CFArrayRef certArrayRef = CFArrayCreate(NULL, (void *)&cert, 1, NULL);
     SecTrustRef serverTrust = protectionSpace.serverTrust;
     SecTrustSetAnchorCertificates(serverTrust, certArrayRef);
+    
+    // Create a policy that ignores the host name
+    SecPolicyRef policy = SecPolicyCreateSSL(true, NULL);
+    SecTrustSetPolicies(serverTrust, policy);
     
     // Verify that trust.
     SecTrustResultType trustResult;
@@ -70,55 +112,26 @@
     CFRelease(certDataRef);
     
     // Did our custom trust chain evaluate successfully?
-    return trustResult == kSecTrustResultUnspecified;
+    BOOL trusted = trustResult == kSecTrustResultUnspecified;
+    return trusted;
 }
 
 - (BOOL)connection:(NSURLConnection *)connection canAuthenticateAgainstProtectionSpace:(NSURLProtectionSpace *)protectionSpace {
-    return [protectionSpace.authenticationMethod isEqualToString:NSURLAuthenticationMethodServerTrust];
+        return [protectionSpace.authenticationMethod isEqualToString:NSURLAuthenticationMethodServerTrust]
+                    || [protectionSpace.authenticationMethod isEqualToString:NSURLAuthenticationMethodClientCertificate];
 }
 
 - (void)connection:(NSURLConnection *)connection didReceiveAuthenticationChallenge:(NSURLAuthenticationChallenge *)challenge {
     
-//    NSLog(@"Authentication challenge");
-//    
-//    // load cert
-//    NSString *path = [[NSBundle mainBundle] pathForResource:@"pwk-compat" ofType:@"p12"];
-//    NSData *p12data = [NSData dataWithContentsOfFile:path];
-//    CFDataRef inP12data = (__bridge CFDataRef)p12data;
-//    CFStringRef password = CFSTR("password");
-//    
-//    SecIdentityRef myIdentity;
-//    SecTrustRef myTrust;
-//    //OSStatus extractIdentityStatus = [self extractIdentityAndTrust :inPKCS12Data :&identity :&trust :password];
-//    OSStatus status = [self extractIdentityAndTrust :inP12data :&myIdentity :&myTrust :password];
-//    
-//    SecCertificateRef myCertificate;
-//    SecIdentityCopyCertificate(myIdentity, &myCertificate);
-//    const void *certs[] = { myCertificate };
-//    CFArrayRef certsArray = CFArrayCreate(NULL, certs, 1, NULL);
-//    
-//    NSURLCredential *credential = [NSURLCredential credentialWithIdentity:myIdentity certificates:(__bridge NSArray*)certsArray persistence:NSURLCredentialPersistencePermanent];
-//    
-//    [[challenge sender] useCredential:credential forAuthenticationChallenge:challenge];
-    
-    
-    
-    
-    
-    
-    
     BOOL trustServer = [self shouldTrustProtectionSpace:challenge.protectionSpace];
-    
+
     if (trustServer) {
         
         // gets a certificate from local resources
-        NSString *thePath = [[NSBundle mainBundle] pathForResource:@"pwk-compat" ofType:@"p12"];
+        //NSString *thePath = [[NSBundle mainBundle] pathForResource:@"pwk-compat" ofType:@"p12"];
+        NSString *thePath = [[NSBundle mainBundle] pathForResource:@"buzzClient" ofType:@"p12"];
         NSData *PKCS12Data = [[NSData alloc] initWithContentsOfFile:thePath];
         CFDataRef inPKCS12Data = (__bridge CFDataRef)PKCS12Data;
-        
-        CFStringRef password = CFSTR("passphrase");
-        SecIdentityRef identity;
-        SecTrustRef trust;
         
         // Import .p12 data
         CFArrayRef keyref = NULL;
@@ -150,47 +163,41 @@
         
         // the certificates array, containing the identity then the root certificate
         NSArray *myCerts = [[NSArray alloc] initWithObjects:(__bridge id)identityRef, (__bridge id)cert, nil];
-
         NSURLCredential *credential = [NSURLCredential credentialWithIdentity:identityRef certificates:myCerts persistence:NSURLCredentialPersistencePermanent];
         
         [challenge.sender useCredential:credential forAuthenticationChallenge:challenge];
+        return;
         
-        
-        /*
-        // extract the identity and trust from the certificate
-        OSStatus extractIdentityStatus = [self extractIdentityAndTrust :inPKCS12Data :&identity :&trust :password];
-        
-        if(extractIdentityStatus != noErr)
-        {
-            SecCertificateRef certificate = NULL;
-            OSStatus status = SecIdentityCopyCertificate (identity, &certificate);
-            
-            if (status) {
-                NSLog(@"SecIdentityCopyCertificate failed.\n");
-            }
-            
-            const void *certs[] = {certificate};
-            CFArrayRef certArray = CFArrayCreate(kCFAllocatorDefault, certs, 1, NULL);
-            
-            // create a credential from the certificate and identity, then reply to the challenge with the credential
-            NSURLCredential *credential = [NSURLCredential credentialWithIdentity:identity certificates:(__bridge NSArray*)certArray persistence:NSURLCredentialPersistencePermanent];
-            
-            [challenge.sender useCredential:credential forAuthenticationChallenge:challenge];
-            
-        } else {
-            [challenge.sender cancelAuthenticationChallenge:challenge];
-        }
-         */
-
-        
-        
+//        // extract the identity and trust from the certificate
+//         CFStringRef password = CFSTR("passphrase");
+//         SecIdentityRef identity;
+//         SecTrustRef trust;
+//         
+//        OSStatus extractIdentityStatus = [self extractIdentityAndTrust :inPKCS12Data :&identity :&trust :password];
+//        
+//        if(extractIdentityStatus != noErr)
+//        {
+//            SecCertificateRef certificate = NULL;
+//            OSStatus status = SecIdentityCopyCertificate (identity, &certificate);
+//            
+//            if (status) {
+//                NSLog(@"SecIdentityCopyCertificate failed.\n");
+//            }
+//            
+//            const void *certs[] = {certificate};
+//            CFArrayRef certArray = CFArrayCreate(kCFAllocatorDefault, certs, 1, NULL);
+//            
+//            // create a credential from the certificate and identity, then reply to the challenge with the credential
+//            NSURLCredential *credential = [NSURLCredential credentialWithIdentity:identity certificates:(__bridge NSArray*)certArray persistence:NSURLCredentialPersistencePermanent];
+//            
+//            [challenge.sender useCredential:credential forAuthenticationChallenge:challenge];
+//            
+//        } else {
+//            [challenge.sender cancelAuthenticationChallenge:challenge];
+//        }
     } else {
-        
         [challenge.sender performDefaultHandlingForAuthenticationChallenge:challenge];
-        
     }
-    
-    
 }
 
 - (OSStatus)extractIdentityAndTrust:(CFDataRef)inP12Data :(SecIdentityRef*)outIdentity :(SecTrustRef*)outTrust :(CFStringRef) keyPassword{
@@ -201,8 +208,8 @@
     const void *values[] = { keyPassword };
     CFDictionaryRef optionsDictionary = NULL;
     
-    /* Create a dictionary containing the passphrase if one
-     was specified.  Otherwise, create an empty dictionary. */
+    // Create a dictionary containing the passphrase if one
+    // was specified.  Otherwise, create an empty dictionary.
     optionsDictionary = CFDictionaryCreate(
                                            NULL, keys,
                                            values, (keyPassword ? 1 : 0),
