@@ -71,23 +71,9 @@
     // Dispose of any resources that can be recreated.
 }
 
--(void)connection:(NSURLConnection *)connection didReceiveData:(NSData *)data {
-    
-    NSString *dataString = [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding];
-    NSLog(@"Data Is: %@", dataString);
-}
-
-#pragma mark Get Server Cert From Application Bundle
-
-
 - (BOOL)shouldTrustProtectionSpace:(NSURLProtectionSpace *)protectionSpace {
     
-    if(protectionSpace.authenticationMethod == NSURLAuthenticationMethodClientCertificate) {
-        return YES;
-    }
-    
     // Load up the bundled server public key certificate.
-    //NSString *certPath = [[NSBundle mainBundle] pathForResource:@"pluralsight.com" ofType:@"der"];
     NSString *certPath = [[NSBundle mainBundle] pathForResource:@"buzzServer" ofType:@"der"];
     NSData *certData = [[NSData alloc] initWithContentsOfFile:certPath];
     CFDataRef certDataRef = (__bridge_retained CFDataRef)certData;
@@ -123,12 +109,21 @@
 
 - (void)connection:(NSURLConnection *)connection didReceiveAuthenticationChallenge:(NSURLAuthenticationChallenge *)challenge {
     
-    BOOL trustServer = [self shouldTrustProtectionSpace:challenge.protectionSpace];
-
-    if (trustServer) {
+    NSString *authMethod = challenge.protectionSpace.authenticationMethod;
+    
+    if ([authMethod isEqualToString:NSURLAuthenticationMethodServerTrust]) {
+        
+        // determine if server cert is correct
+        BOOL trustServer = [self shouldTrustProtectionSpace:challenge.protectionSpace];
+        
+        if (trustServer) {
+            [challenge.sender performDefaultHandlingForAuthenticationChallenge:challenge];
+            return;
+        }
+        
+    } else if ([authMethod isEqualToString:NSURLAuthenticationMethodClientCertificate]) {
         
         // gets a certificate from local resources
-        //NSString *thePath = [[NSBundle mainBundle] pathForResource:@"pwk-compat" ofType:@"p12"];
         NSString *thePath = [[NSBundle mainBundle] pathForResource:@"buzzClient" ofType:@"p12"];
         NSData *PKCS12Data = [[NSData alloc] initWithContentsOfFile:thePath];
         CFDataRef inPKCS12Data = (__bridge CFDataRef)PKCS12Data;
@@ -136,10 +131,10 @@
         // Import .p12 data
         CFArrayRef keyref = NULL;
         OSStatus importStatus = SecPKCS12Import(inPKCS12Data,
-                                          (__bridge CFDictionaryRef)[NSDictionary
-                                                                     dictionaryWithObject:@"password"
-                                                                     forKey:(__bridge id)kSecImportExportPassphrase],
-                                          &keyref);
+                                                (__bridge CFDictionaryRef)[NSDictionary
+                                                                           dictionaryWithObject:@"password"
+                                                                           forKey:(__bridge id)kSecImportExportPassphrase],
+                                                &keyref);
         if (importStatus != noErr) {
             [challenge.sender cancelAuthenticationChallenge:challenge];
             NSLog(@"SecPKCS12Import failed.");
@@ -167,126 +162,15 @@
         
         [challenge.sender useCredential:credential forAuthenticationChallenge:challenge];
         return;
-        
-//        // extract the identity and trust from the certificate
-//         CFStringRef password = CFSTR("passphrase");
-//         SecIdentityRef identity;
-//         SecTrustRef trust;
-//         
-//        OSStatus extractIdentityStatus = [self extractIdentityAndTrust :inPKCS12Data :&identity :&trust :password];
-//        
-//        if(extractIdentityStatus != noErr)
-//        {
-//            SecCertificateRef certificate = NULL;
-//            OSStatus status = SecIdentityCopyCertificate (identity, &certificate);
-//            
-//            if (status) {
-//                NSLog(@"SecIdentityCopyCertificate failed.\n");
-//            }
-//            
-//            const void *certs[] = {certificate};
-//            CFArrayRef certArray = CFArrayCreate(kCFAllocatorDefault, certs, 1, NULL);
-//            
-//            // create a credential from the certificate and identity, then reply to the challenge with the credential
-//            NSURLCredential *credential = [NSURLCredential credentialWithIdentity:identity certificates:(__bridge NSArray*)certArray persistence:NSURLCredentialPersistencePermanent];
-//            
-//            [challenge.sender useCredential:credential forAuthenticationChallenge:challenge];
-//            
-//        } else {
-//            [challenge.sender cancelAuthenticationChallenge:challenge];
-//        }
-    } else {
-        [challenge.sender performDefaultHandlingForAuthenticationChallenge:challenge];
     }
+
+    [challenge.sender performDefaultHandlingForAuthenticationChallenge:challenge];
 }
 
-- (OSStatus)extractIdentityAndTrust:(CFDataRef)inP12Data :(SecIdentityRef*)outIdentity :(SecTrustRef*)outTrust :(CFStringRef) keyPassword{
+-(void)connection:(NSURLConnection *)connection didReceiveData:(NSData *)data {
     
-    OSStatus securityError = errSecSuccess;
-    
-    const void *keys[] =   { kSecImportExportPassphrase };
-    const void *values[] = { keyPassword };
-    CFDictionaryRef optionsDictionary = NULL;
-    
-    // Create a dictionary containing the passphrase if one
-    // was specified.  Otherwise, create an empty dictionary.
-    optionsDictionary = CFDictionaryCreate(
-                                           NULL, keys,
-                                           values, (keyPassword ? 1 : 0),
-                                           NULL, NULL);  // 1
-    
-    CFArrayRef items = NULL;
-    securityError = SecPKCS12Import(inP12Data,
-                                    optionsDictionary,
-                                    &items);                    // 2
-    
-    
-    //
-    if (securityError == 0) {                                   // 3
-        CFDictionaryRef myIdentityAndTrust = CFArrayGetValueAtIndex (items, 0);
-        const void *tempIdentity = NULL;
-        tempIdentity = CFDictionaryGetValue (myIdentityAndTrust,
-                                             kSecImportItemIdentity);
-        CFRetain(tempIdentity);
-        *outIdentity = (SecIdentityRef)tempIdentity;
-        const void *tempTrust = NULL;
-        tempTrust = CFDictionaryGetValue (myIdentityAndTrust, kSecImportItemTrust);
-        
-        CFRetain(tempTrust);
-        *outTrust = (SecTrustRef)tempTrust;
-    }
-    
-    if (optionsDictionary) {
-        CFRelease(optionsDictionary);
-    }
-    
-    if (items) {
-        CFRelease(items);
-    }
-    
-    return securityError;
+    NSString *dataString = [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding];
+    NSLog(@"Data Is: %@", dataString);
 }
-
-
-#pragma mark Hashing and Comparing Server Cert
-
-/*
-- (void) connection:(NSURLConnection*)connection willSendRequestForAuthenticationChallenge:(NSURLAuthenticationChallenge *)challenge {
-    
-    NSString* expectedCertHash = @"50d625d98813225e1fbb05f0e59dc15430d088b85b7f7bd4dca3fb698d526f5b";
-    
-    id <NSURLAuthenticationChallengeSender> sender = challenge.sender;
-    
-    NSURLProtectionSpace *protectionSpace = challenge.protectionSpace;
-    
-    SecTrustRef trust = [protectionSpace serverTrust];
-    
-    CFIndex certificateIndex = 0;
-    
-    SecCertificateRef certificate = SecTrustGetCertificateAtIndex(trust, certificateIndex);
-    
-    NSData* serverCertificateData = (__bridge NSData*)SecCertificateCopyData(certificate);
-    
-    NSString *serverCertificateDataHash = [[serverCertificateData base64EncodedStringWithOptions:0] Hash];
-    
-    BOOL areCertificatesEqual = [serverCertificateDataHash isEqualToString:expectedCertHash];
-    
-    if(areCertificatesEqual)
-    {
-        NSURLCredential *credential = [NSURLCredential credentialForTrust:trust];
-        [sender useCredential:credential forAuthenticationChallenge:challenge];
-    }
-    else
-    {
-        [sender cancelAuthenticationChallenge:challenge];
-    }
-}
- */
-
-//- (BOOL)connection:(NSURLConnection*)connection canAuthenticateAgainstProtectionSpace:(NSURLProtectionSpace *)protectionSpace {
-//    
-//    
-//    return YES;
-//}
 
 @end
