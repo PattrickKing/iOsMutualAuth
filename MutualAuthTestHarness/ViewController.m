@@ -8,8 +8,6 @@
 
 #import "ViewController.h"
 #import <CommonCrypto/CommonDigest.h>
-#import "NSString+HashCategory.h"
-
 #import <UIKit/UIKit.h>
 #import <Security/Security.h>
 #import <CoreFoundation/CoreFoundation.h>
@@ -26,9 +24,6 @@
     [super viewDidLoad];
 	// Do any additional setup after loading the view, typically from a nib.
     
-    //NSURL *url = [NSURL URLWithString: @"https://www.pluralsight.com/odata/Courses"];
-    //NSURL *url = [NSURL URLWithString: @"https://www.google.com"];
-    //NSURL *url = [NSURL URLWithString: @"http://0.0.0.0:4567/api"];
     NSURL *url = [NSURL URLWithString: @"https://0.0.0.0:4567/api/users/5276666536ddce0db800009c"];
     NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:url];
     [request setValue:@"application/json" forHTTPHeaderField:@"Accept"];
@@ -39,7 +34,7 @@
     self.connection = connection;
     
     //start the connection
-    [connection start];
+    [self.connection start];
 }
 
 - (void)basicAuthForRequest:(NSMutableURLRequest *)request withUsername:(NSString *)username andPassword:(NSString *)password
@@ -65,46 +60,9 @@
     CFRelease(authoriztionMessageRef);
 }
 
-- (void)didReceiveMemoryWarning
-{
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
-}
-
-- (BOOL)shouldTrustProtectionSpace:(NSURLProtectionSpace *)protectionSpace {
-    
-    // Load up the bundled server public key certificate.
-    NSString *certPath = [[NSBundle mainBundle] pathForResource:@"buzzServer" ofType:@"der"];
-    NSData *certData = [[NSData alloc] initWithContentsOfFile:certPath];
-    CFDataRef certDataRef = (__bridge_retained CFDataRef)certData;
-    SecCertificateRef cert = SecCertificateCreateWithData(NULL, certDataRef);
-    
-    // Establish a chain of trust anchored on our bundled certificate.
-    CFArrayRef certArrayRef = CFArrayCreate(NULL, (void *)&cert, 1, NULL);
-    SecTrustRef serverTrust = protectionSpace.serverTrust;
-    SecTrustSetAnchorCertificates(serverTrust, certArrayRef);
-    
-    // Create a policy that ignores the host name
-    SecPolicyRef policy = SecPolicyCreateSSL(true, NULL);
-    SecTrustSetPolicies(serverTrust, policy);
-    
-    // Verify that trust.
-    SecTrustResultType trustResult;
-    SecTrustEvaluate(serverTrust, &trustResult);
-    
-    // Clean up.
-    CFRelease(certArrayRef);
-    CFRelease(cert);
-    CFRelease(certDataRef);
-    
-    // Did our custom trust chain evaluate successfully?
-    BOOL trusted = trustResult == kSecTrustResultUnspecified;
-    return trusted;
-}
-
 - (BOOL)connection:(NSURLConnection *)connection canAuthenticateAgainstProtectionSpace:(NSURLProtectionSpace *)protectionSpace {
-        return [protectionSpace.authenticationMethod isEqualToString:NSURLAuthenticationMethodServerTrust]
-                    || [protectionSpace.authenticationMethod isEqualToString:NSURLAuthenticationMethodClientCertificate];
+    return [protectionSpace.authenticationMethod isEqualToString:NSURLAuthenticationMethodServerTrust]
+    || [protectionSpace.authenticationMethod isEqualToString:NSURLAuthenticationMethodClientCertificate];
 }
 
 - (void)connection:(NSURLConnection *)connection didReceiveAuthenticationChallenge:(NSURLAuthenticationChallenge *)challenge {
@@ -114,12 +72,16 @@
     if ([authMethod isEqualToString:NSURLAuthenticationMethodServerTrust]) {
         
         // determine if server cert is correct
-        BOOL trustServer = [self shouldTrustProtectionSpace:challenge.protectionSpace];
+        BOOL shouldTrustServer = [self shouldTrustServer:challenge.protectionSpace.serverTrust];
         
-        if (trustServer) {
+        if (shouldTrustServer) {
             [challenge.sender performDefaultHandlingForAuthenticationChallenge:challenge];
             return;
         }
+        
+        [challenge.sender cancelAuthenticationChallenge:challenge];
+        NSLog(@"shouldTrustServer failed.");
+        return;
         
     } else if ([authMethod isEqualToString:NSURLAuthenticationMethodClientCertificate]) {
         
@@ -163,14 +125,55 @@
         [challenge.sender useCredential:credential forAuthenticationChallenge:challenge];
         return;
     }
-
+    
     [challenge.sender performDefaultHandlingForAuthenticationChallenge:challenge];
+}
+
+/**
+ * Method name: shouldTrustServer
+ * Description: Determines if the remote host's (SecTrustRef) certificate matches the bundled server DER certificate.
+ * Parameters: SecTrustRef
+ */
+- (BOOL)shouldTrustServer:(SecTrustRef)serverTrust {
+    
+    // Load up the bundled server public key certificate.
+    NSString *certPath = [[NSBundle mainBundle] pathForResource:@"buzzServer" ofType:@"der"];
+    NSData *certData = [[NSData alloc] initWithContentsOfFile:certPath];
+    CFDataRef certDataRef = (__bridge_retained CFDataRef)certData;
+    SecCertificateRef cert = SecCertificateCreateWithData(NULL, certDataRef);
+    
+    // Establish a chain of trust anchored on our bundled certificate.
+    CFArrayRef certArrayRef = CFArrayCreate(NULL, (void *)&cert, 1, NULL);
+    SecTrustSetAnchorCertificates(serverTrust, certArrayRef);
+    
+    // Create a policy that ignores the host name
+    SecPolicyRef policy = SecPolicyCreateSSL(true, NULL);
+    SecTrustSetPolicies(serverTrust, policy);
+    
+    // Verify that trust.
+    SecTrustResultType trustResult;
+    SecTrustEvaluate(serverTrust, &trustResult);
+    
+    // Clean up.
+    CFRelease(certArrayRef);
+    CFRelease(cert);
+    CFRelease(certDataRef);
+    
+    // Did our custom trust chain evaluate successfully?
+    BOOL trusted = trustResult == kSecTrustResultUnspecified;
+    return trusted;
 }
 
 -(void)connection:(NSURLConnection *)connection didReceiveData:(NSData *)data {
     
     NSString *dataString = [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding];
     NSLog(@"Data Is: %@", dataString);
+}
+
+- (void)didReceiveMemoryWarning
+{
+    [super didReceiveMemoryWarning];
+    // Dispose of any resources that can be recreated.
 }
 
 @end

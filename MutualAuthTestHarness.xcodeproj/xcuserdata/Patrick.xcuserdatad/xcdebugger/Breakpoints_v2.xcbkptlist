@@ -10,12 +10,28 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "MutualAuthTestHarness/ViewController.m"
-            timestampString = "407174156.769176"
+            timestampString = "407241163.244968"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "112"
-            endingLineNumber = "112"
-            landmarkName = "-connection:didReceiveAuthenticationChallenge:"
+            startingLineNumber = "169"
+            endingLineNumber = "169"
+            landmarkName = "-connection:didReceiveData:"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "MutualAuthTestHarness/ViewController.m"
+            timestampString = "407241148.547243"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "140"
+            endingLineNumber = "140"
+            landmarkName = "-shouldTrustServer:"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>

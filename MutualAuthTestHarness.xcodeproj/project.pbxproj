@@ -7,8 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		CD2AB77A1838E5E3002D7764 /* pwk.p12 in Resources */ = {isa = PBXBuildFile; fileRef = CD2AB7791838E5E3002D7764 /* pwk.p12 */; };
-		CD2AB77C1838E76E002D7764 /* pwk-compat.p12 in Resources */ = {isa = PBXBuildFile; fileRef = CD2AB77B1838E76E002D7764 /* pwk-compat.p12 */; };
 		CD992FE218440D3D005B962D /* buzzClient-noncompat.p12 in Resources */ = {isa = PBXBuildFile; fileRef = CD992FDC18440D3D005B962D /* buzzClient-noncompat.p12 */; };
 		CD992FE318440D3D005B962D /* buzzClient.crt in Resources */ = {isa = PBXBuildFile; fileRef = CD992FDD18440D3D005B962D /* buzzClient.crt */; };
 		CD992FE418440D3D005B962D /* buzzClient.csr in Resources */ = {isa = PBXBuildFile; fileRef = CD992FDE18440D3D005B962D /* buzzClient.csr */; };
@@ -16,7 +14,6 @@
 		CD992FE618440D3D005B962D /* buzzClient.p12 in Resources */ = {isa = PBXBuildFile; fileRef = CD992FE018440D3D005B962D /* buzzClient.p12 */; };
 		CD992FE718440D3D005B962D /* buzzClient.pem in Resources */ = {isa = PBXBuildFile; fileRef = CD992FE118440D3D005B962D /* buzzClient.pem */; };
 		CD992FEB1844C906005B962D /* buzzServer.der in Resources */ = {isa = PBXBuildFile; fileRef = CD992FEA1844C906005B962D /* buzzServer.der */; };
-		CDA94FA51832403E0077FAD5 /* pattrickking.pfx in Resources */ = {isa = PBXBuildFile; fileRef = CDA94FA41832403E0077FAD5 /* pattrickking.pfx */; };
 		CDFD35E9182E628300305665 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CDFD35E8182E628300305665 /* Foundation.framework */; };
 		CDFD35EB182E628300305665 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CDFD35EA182E628300305665 /* CoreGraphics.framework */; };
 		CDFD35ED182E628300305665 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CDFD35EC182E628300305665 /* UIKit.framework */; };
@@ -31,8 +28,6 @@
 		CDFD360A182E628300305665 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CDFD35EC182E628300305665 /* UIKit.framework */; };
 		CDFD3612182E628300305665 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = CDFD3610182E628300305665 /* InfoPlist.strings */; };
 		CDFD3614182E628300305665 /* MutualAuthTestHarnessTests.m in Sources */ = {isa = PBXBuildFile; fileRef = CDFD3613182E628300305665 /* MutualAuthTestHarnessTests.m */; };
-		CDFD361F182E673800305665 /* NSString+HashCategory.m in Sources */ = {isa = PBXBuildFile; fileRef = CDFD361E182E673800305665 /* NSString+HashCategory.m */; };
-		CDFD3621182FC2AB00305665 /* pluralsight.com.der in Resources */ = {isa = PBXBuildFile; fileRef = CDFD3620182FC2AB00305665 /* pluralsight.com.der */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -46,8 +41,6 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		CD2AB7791838E5E3002D7764 /* pwk.p12 */ = {isa = PBXFileReference; lastKnownFileType = file; path = pwk.p12; sourceTree = "<group>"; };
-		CD2AB77B1838E76E002D7764 /* pwk-compat.p12 */ = {isa = PBXFileReference; lastKnownFileType = file; path = "pwk-compat.p12"; sourceTree = "<group>"; };
 		CD992FDC18440D3D005B962D /* buzzClient-noncompat.p12 */ = {isa = PBXFileReference; lastKnownFileType = file; path = "buzzClient-noncompat.p12"; sourceTree = "<group>"; };
 		CD992FDD18440D3D005B962D /* buzzClient.crt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = buzzClient.crt; sourceTree = "<group>"; };
 		CD992FDE18440D3D005B962D /* buzzClient.csr */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = buzzClient.csr; sourceTree = "<group>"; };
@@ -55,7 +48,6 @@
 		CD992FE018440D3D005B962D /* buzzClient.p12 */ = {isa = PBXFileReference; lastKnownFileType = file; path = buzzClient.p12; sourceTree = "<group>"; };
 		CD992FE118440D3D005B962D /* buzzClient.pem */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = buzzClient.pem; sourceTree = "<group>"; };
 		CD992FEA1844C906005B962D /* buzzServer.der */ = {isa = PBXFileReference; lastKnownFileType = file; path = buzzServer.der; sourceTree = "<group>"; };
-		CDA94FA41832403E0077FAD5 /* pattrickking.pfx */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = pattrickking.pfx; sourceTree = "<group>"; };
 		CDFD35E5182E628300305665 /* MutualAuthTestHarness.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MutualAuthTestHarness.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CDFD35E8182E628300305665 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		CDFD35EA182E628300305665 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -75,9 +67,6 @@
 		CDFD360F182E628300305665 /* MutualAuthTestHarnessTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "MutualAuthTestHarnessTests-Info.plist"; sourceTree = "<group>"; };
 		CDFD3611182E628300305665 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		CDFD3613182E628300305665 /* MutualAuthTestHarnessTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MutualAuthTestHarnessTests.m; sourceTree = "<group>"; };
-		CDFD361D182E673800305665 /* NSString+HashCategory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+HashCategory.h"; sourceTree = "<group>"; };
-		CDFD361E182E673800305665 /* NSString+HashCategory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+HashCategory.m"; sourceTree = "<group>"; };
-		CDFD3620182FC2AB00305665 /* pluralsight.com.der */ = {isa = PBXFileReference; lastKnownFileType = file; path = pluralsight.com.der; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -151,10 +140,6 @@
 		CDFD35EE182E628300305665 /* MutualAuthTestHarness */ = {
 			isa = PBXGroup;
 			children = (
-				CD2AB77B1838E76E002D7764 /* pwk-compat.p12 */,
-				CD2AB7791838E5E3002D7764 /* pwk.p12 */,
-				CDA94FA41832403E0077FAD5 /* pattrickking.pfx */,
-				CDFD3620182FC2AB00305665 /* pluralsight.com.der */,
 				CDFD35F7182E628300305665 /* AppDelegate.h */,
 				CDFD35F8182E628300305665 /* AppDelegate.m */,
 				CDFD35FA182E628300305665 /* Main.storyboard */,
@@ -163,8 +148,6 @@
 				CD992FDB18440D3D005B962D /* certs */,
 				CDFD3600182E628300305665 /* Images.xcassets */,
 				CDFD35EF182E628300305665 /* Supporting Files */,
-				CDFD361D182E673800305665 /* NSString+HashCategory.h */,
-				CDFD361E182E673800305665 /* NSString+HashCategory.m */,
 			);
 			path = MutualAuthTestHarness;
 			sourceTree = "<group>";
@@ -275,18 +258,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				CD992FE418440D3D005B962D /* buzzClient.csr in Resources */,
-				CD2AB77A1838E5E3002D7764 /* pwk.p12 in Resources */,
 				CD992FE718440D3D005B962D /* buzzClient.pem in Resources */,
-				CDFD3621182FC2AB00305665 /* pluralsight.com.der in Resources */,
 				CDFD3601182E628300305665 /* Images.xcassets in Resources */,
-				CDA94FA51832403E0077FAD5 /* pattrickking.pfx in Resources */,
 				CD992FE618440D3D005B962D /* buzzClient.p12 in Resources */,
 				CDFD35F3182E628300305665 /* InfoPlist.strings in Resources */,
 				CD992FE518440D3D005B962D /* buzzClient.key in Resources */,
 				CD992FEB1844C906005B962D /* buzzServer.der in Resources */,
 				CD992FE318440D3D005B962D /* buzzClient.crt in Resources */,
 				CDFD35FC182E628300305665 /* Main.storyboard in Resources */,
-				CD2AB77C1838E76E002D7764 /* pwk-compat.p12 in Resources */,
 				CD992FE218440D3D005B962D /* buzzClient-noncompat.p12 in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -309,7 +288,6 @@
 				CDFD35FF182E628300305665 /* ViewController.m in Sources */,
 				CDFD35F9182E628300305665 /* AppDelegate.m in Sources */,
 				CDFD35F5182E628300305665 /* main.m in Sources */,
-				CDFD361F182E673800305665 /* NSString+HashCategory.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
