@@ -60,12 +60,7 @@
     CFRelease(authoriztionMessageRef);
 }
 
-- (BOOL)connection:(NSURLConnection *)connection canAuthenticateAgainstProtectionSpace:(NSURLProtectionSpace *)protectionSpace {
-    return [protectionSpace.authenticationMethod isEqualToString:NSURLAuthenticationMethodServerTrust]
-    || [protectionSpace.authenticationMethod isEqualToString:NSURLAuthenticationMethodClientCertificate];
-}
-
-- (void)connection:(NSURLConnection *)connection didReceiveAuthenticationChallenge:(NSURLAuthenticationChallenge *)challenge {
+- (void)connection:(NSURLConnection *)connection willSendRequestForAuthenticationChallenge:(NSURLAuthenticationChallenge *)challenge {
     
     NSString *authMethod = challenge.protectionSpace.authenticationMethod;
     
