@@ -23,18 +23,6 @@
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view, typically from a nib.
-    
-    NSURL *url = [NSURL URLWithString: @"https://0.0.0.0:4567/api/users/5276666536ddce0db800009c"];
-    NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:url];
-    [request setValue:@"application/json" forHTTPHeaderField:@"Accept"];
-    [self basicAuthForRequest: request withUsername: @"johnyoates@gmail.com" andPassword: @"70e2a2e2a9fe55f3563d5a198e3f853d15de7f93499f903772667a84630f14a2"];
-    
-    //initialize a connection from request
-    NSURLConnection *connection = [[NSURLConnection alloc] initWithRequest:request delegate:self];
-    self.connection = connection;
-    
-    //start the connection
-    [self.connection start];
 }
 
 - (void)basicAuthForRequest:(NSMutableURLRequest *)request withUsername:(NSString *)username andPassword:(NSString *)password
@@ -162,13 +150,27 @@
 -(void)connection:(NSURLConnection *)connection didReceiveData:(NSData *)data {
     
     NSString *dataString = [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding];
+    self.MessageTextView.text = dataString;
     NSLog(@"Data Is: %@", dataString);
 }
 
-- (void)didReceiveMemoryWarning
-{
+- (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
 
+- (IBAction)CallServiceButton:(id)sender {
+    
+    NSURL *url = [NSURL URLWithString: @"https://0.0.0.0:4567/api/users/5276666536ddce0db800009c"];
+    NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:url];
+    [request setValue:@"application/json" forHTTPHeaderField:@"Accept"];
+    [self basicAuthForRequest: request withUsername: @"johnyoates@gmail.com" andPassword: @"70e2a2e2a9fe55f3563d5a198e3f853d15de7f93499f903772667a84630f14a2"];
+    
+    //initialize a connection from request
+    NSURLConnection *connection = [[NSURLConnection alloc] initWithRequest:request delegate:self];
+    self.connection = connection;
+    
+    //start the connection
+    [self.connection start];
+}
 @end

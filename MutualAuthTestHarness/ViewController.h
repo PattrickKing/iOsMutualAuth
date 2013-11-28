@@ -10,16 +10,10 @@
 
 @interface ViewController : UIViewController
 
+@property (weak, nonatomic) IBOutlet UITextView *MessageTextView;
+
+- (IBAction)CallServiceButton:(id)sender;
+
 @property (retain, nonatomic) NSURLConnection *connection;
 
-//OSStatus extractIdentityAndTrust(CFDataRef inPKCS12Data, SecIdentityRef *outIdentity, SecTrustRef *outTrust, CFStringRef keyPassword);
-
-OSStatus extractIdentityAndTrust(CFDataRef inPKCS12Data, SecIdentityRef *outIdentity, SecTrustRef *outTrust, CFStringRef keyPassword);
-
-/*
-- (OSStatus*) extractIdentityAndTrust(CFDataRef inPKCS12Data,
-                                      SecIdentityRef *outIdentity,
-                                      SecTrustRef *outTrust,
-                                      CFStringRef keyPassword);
-*/
 @end
