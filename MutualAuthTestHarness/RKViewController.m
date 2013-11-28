@@ -7,6 +7,12 @@
 //
 
 #import "RKViewController.h"
+#import "BZHTTPRequestOperation.h"
+#import "BZHTTPClient.h"
+#import "BZUser.h"
+#import <RestKit/RestKit.h>
+#import <AFNetworking/AFHTTPRequestOperation.h>
+#import "MappingProvider.h"
 
 @interface RKViewController ()
 
@@ -36,6 +42,89 @@
 }
 
 - (IBAction)RKCallServiceButton:(id)sender {
+    
+    //operation.setHttpOperation = BZHTTPRequestOperation;
+    //RKManagedObjectRequestOperation* requestOperation = [[RKManagedObjectRequestOperation alloc] init];
+    //[requestOperation HTTPRequestOperation: operation];
+    
+    NSURL *url = [NSURL URLWithString: @"https://0.0.0.0:4567/api/users/5276666536ddce0db800009c"];
+    NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:url];
+    [request setValue:@"application/json" forHTTPHeaderField:@"Accept"];
+    [self basicAuthForRequest: request withUsername: @"johnyoates@gmail.com" andPassword: @"70e2a2e2a9fe55f3563d5a198e3f853d15de7f93499f903772667a84630f14a2"];
+    
+    BZHTTPRequestOperation *bzOperation = [[BZHTTPRequestOperation alloc] initWithRequest:request];
+    NSIndexSet *statusCodeSet = RKStatusCodeIndexSetForClass(RKStatusCodeClassSuccessful);
+    RKMapping *mapping = [MappingProvider userMapping];
+    
+    RKResponseDescriptor *descriptor = [RKResponseDescriptor responseDescriptorWithMapping:mapping method:RKRequestMethodGET pathPattern:@"/api/users" keyPath:@"user" statusCodes:statusCodeSet];
+    
+    RKObjectRequestOperation *operation = [[RKObjectRequestOperation alloc] initWithHTTPRequestOperation:bzOperation
+                                                                                     responseDescriptors:@[descriptor]];
+    
+    [operation setCompletionBlockWithSuccess:^(RKObjectRequestOperation *operation, RKMappingResult *mappingResult) {
+        
+        BZUser* loginUser = (BZUser*)mappingResult.firstObject;
+        NSLog(@"%@", loginUser.email);
+        
+    }failure:^(RKObjectRequestOperation *operation, NSError *error) {
+        
+        NSLog(@"Sad Trombone");
+
+    }];
+    
+    /*
+     
+     BZHTTPClient *client = [[BZHTTPClient alloc] initWithBaseURL:url];
+     [manager setHTTPClient:client];
+     RKObjectManager *manager = [[RKObjectManager alloc] initWithHTTPClient:client];
+     
+     NSManagedObjectContext* transactionContext =
+     [manager.managedObjectStore
+     newChildManagedObjectContextWithConcurrencyType:NSPrivateQueueConcurrencyType
+     tracksChanges:true];
+     
+     
+    RKManagedObjectRequestOperation* loginOperation =
+    [manager
+     managedObjectRequestOperationWithRequest:request
+     managedObjectContext:transactionContext
+     success:^(RKObjectRequestOperation *operation, RKMappingResult *mappingResult)
+     {
+         self.RKMessageTextView.text = mappingResult.firstObject;
+         BZUser* loginUser = (BZUser*)mappingResult.firstObject;
+         NSLog(@"%@", loginUser.email);
+
+     }
+     failure:^(RKObjectRequestOperation *operation, NSError *error)
+     {
+         NSLog(@"%@", error.localizedDescription);
+     }];
+     */
+
 }
+
+- (void)basicAuthForRequest:(NSMutableURLRequest *)request withUsername:(NSString *)username andPassword:(NSString *)password
+{
+    // Cast username and password as CFStringRefs via Toll-Free Bridging
+    CFStringRef usernameRef = (__bridge CFStringRef)username;
+    CFStringRef passwordRef = (__bridge CFStringRef)password;
+    
+    // Reference properties of the NSMutableURLRequest
+    CFHTTPMessageRef authoriztionMessageRef = CFHTTPMessageCreateRequest(kCFAllocatorDefault, (__bridge CFStringRef)[request HTTPMethod], (__bridge CFURLRef)[request URL], kCFHTTPVersion1_1);
+    
+    // Encodes usernameRef and passwordRef in Base64
+    CFHTTPMessageAddAuthentication(authoriztionMessageRef, nil, usernameRef, passwordRef, kCFHTTPAuthenticationSchemeBasic, FALSE);
+    
+    // Creates the 'Basic - <encoded_username_and_password>' string for the HTTP header
+    CFStringRef authorizationStringRef = CFHTTPMessageCopyHeaderFieldValue(authoriztionMessageRef, CFSTR("Authorization"));
+    
+    // Add authorizationStringRef as value for 'Authorization' HTTP header
+    [request setValue:(__bridge NSString *)authorizationStringRef forHTTPHeaderField:@"Authorization"];
+    
+    // Cleanup
+    CFRelease(authorizationStringRef);
+    CFRelease(authoriztionMessageRef);
+}
+
 
 @end

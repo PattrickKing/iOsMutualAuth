@@ -10,7 +10,7 @@
 
 @interface RKViewController : UIViewController
 
-@property (strong, nonatomic) IBOutletCollection(UITextView) NSArray *RKMessageTextView;
+@property (weak, nonatomic) IBOutlet UITextView *RKMessageTextView;
 
 - (IBAction)RKCallServiceButton:(id)sender;
 

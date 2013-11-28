@@ -16,6 +16,9 @@
 		CD992FE618440D3D005B962D /* buzzClient.p12 in Resources */ = {isa = PBXBuildFile; fileRef = CD992FE018440D3D005B962D /* buzzClient.p12 */; };
 		CD992FE718440D3D005B962D /* buzzClient.pem in Resources */ = {isa = PBXBuildFile; fileRef = CD992FE118440D3D005B962D /* buzzClient.pem */; };
 		CD992FEB1844C906005B962D /* buzzServer.der in Resources */ = {isa = PBXBuildFile; fileRef = CD992FEA1844C906005B962D /* buzzServer.der */; };
+		CDB292B4184765D400415EBA /* BZUser.m in Sources */ = {isa = PBXBuildFile; fileRef = CDB292B3184765D400415EBA /* BZUser.m */; };
+		CDB292B71847733E00415EBA /* MappingProvider.m in Sources */ = {isa = PBXBuildFile; fileRef = CDB292B61847733E00415EBA /* MappingProvider.m */; };
+		CDF4B5CF1846E5B800D741B6 /* BZHTTPClient.m in Sources */ = {isa = PBXBuildFile; fileRef = CDF4B5CE1846E5B800D741B6 /* BZHTTPClient.m */; };
 		CDFD35E9182E628300305665 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CDFD35E8182E628300305665 /* Foundation.framework */; };
 		CDFD35EB182E628300305665 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CDFD35EA182E628300305665 /* CoreGraphics.framework */; };
 		CDFD35ED182E628300305665 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CDFD35EC182E628300305665 /* UIKit.framework */; };
@@ -57,6 +60,12 @@
 		CD992FE018440D3D005B962D /* buzzClient.p12 */ = {isa = PBXFileReference; lastKnownFileType = file; path = buzzClient.p12; sourceTree = "<group>"; };
 		CD992FE118440D3D005B962D /* buzzClient.pem */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = buzzClient.pem; sourceTree = "<group>"; };
 		CD992FEA1844C906005B962D /* buzzServer.der */ = {isa = PBXFileReference; lastKnownFileType = file; path = buzzServer.der; sourceTree = "<group>"; };
+		CDB292B2184765D400415EBA /* BZUser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BZUser.h; sourceTree = "<group>"; };
+		CDB292B3184765D400415EBA /* BZUser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BZUser.m; sourceTree = "<group>"; };
+		CDB292B51847733E00415EBA /* MappingProvider.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MappingProvider.h; sourceTree = "<group>"; };
+		CDB292B61847733E00415EBA /* MappingProvider.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MappingProvider.m; sourceTree = "<group>"; };
+		CDF4B5CD1846E5B800D741B6 /* BZHTTPClient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BZHTTPClient.h; sourceTree = "<group>"; };
+		CDF4B5CE1846E5B800D741B6 /* BZHTTPClient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BZHTTPClient.m; sourceTree = "<group>"; };
 		CDFD35E5182E628300305665 /* MutualAuthTestHarness.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MutualAuthTestHarness.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CDFD35E8182E628300305665 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		CDFD35EA182E628300305665 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -164,6 +173,12 @@
 				CD4927F21846C2D500E28B9A /* BZHTTPRequestOperation.m */,
 				CD4927F41846D22500E28B9A /* RKViewController.h */,
 				CD4927F51846D22500E28B9A /* RKViewController.m */,
+				CDF4B5CD1846E5B800D741B6 /* BZHTTPClient.h */,
+				CDF4B5CE1846E5B800D741B6 /* BZHTTPClient.m */,
+				CDB292B2184765D400415EBA /* BZUser.h */,
+				CDB292B3184765D400415EBA /* BZUser.m */,
+				CDB292B51847733E00415EBA /* MappingProvider.h */,
+				CDB292B61847733E00415EBA /* MappingProvider.m */,
 			);
 			path = MutualAuthTestHarness;
 			sourceTree = "<group>";
@@ -339,8 +354,11 @@
 				CD4927F61846D22500E28B9A /* RKViewController.m in Sources */,
 				CDFD35FF182E628300305665 /* ViewController.m in Sources */,
 				CD4927F31846C2D500E28B9A /* BZHTTPRequestOperation.m in Sources */,
+				CDB292B71847733E00415EBA /* MappingProvider.m in Sources */,
 				CDFD35F9182E628300305665 /* AppDelegate.m in Sources */,
+				CDF4B5CF1846E5B800D741B6 /* BZHTTPClient.m in Sources */,
 				CDFD35F5182E628300305665 /* main.m in Sources */,
+				CDB292B4184765D400415EBA /* BZUser.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
