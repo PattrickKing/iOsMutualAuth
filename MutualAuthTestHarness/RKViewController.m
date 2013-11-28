@@ -43,10 +43,6 @@
 
 - (IBAction)RKCallServiceButton:(id)sender {
     
-    //operation.setHttpOperation = BZHTTPRequestOperation;
-    //RKManagedObjectRequestOperation* requestOperation = [[RKManagedObjectRequestOperation alloc] init];
-    //[requestOperation HTTPRequestOperation: operation];
-    
     NSURL *url = [NSURL URLWithString: @"https://0.0.0.0:4567/api/users/5276666536ddce0db800009c"];
     NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:url];
     [request setValue:@"application/json" forHTTPHeaderField:@"Accept"];
@@ -72,35 +68,7 @@
 
     }];
     
-    /*
-     
-     BZHTTPClient *client = [[BZHTTPClient alloc] initWithBaseURL:url];
-     [manager setHTTPClient:client];
-     RKObjectManager *manager = [[RKObjectManager alloc] initWithHTTPClient:client];
-     
-     NSManagedObjectContext* transactionContext =
-     [manager.managedObjectStore
-     newChildManagedObjectContextWithConcurrencyType:NSPrivateQueueConcurrencyType
-     tracksChanges:true];
-     
-     
-    RKManagedObjectRequestOperation* loginOperation =
-    [manager
-     managedObjectRequestOperationWithRequest:request
-     managedObjectContext:transactionContext
-     success:^(RKObjectRequestOperation *operation, RKMappingResult *mappingResult)
-     {
-         self.RKMessageTextView.text = mappingResult.firstObject;
-         BZUser* loginUser = (BZUser*)mappingResult.firstObject;
-         NSLog(@"%@", loginUser.email);
-
-     }
-     failure:^(RKObjectRequestOperation *operation, NSError *error)
-     {
-         NSLog(@"%@", error.localizedDescription);
-     }];
-     */
-
+    [operation start];
 }
 
 - (void)basicAuthForRequest:(NSMutableURLRequest *)request withUsername:(NSString *)username andPassword:(NSString *)password
