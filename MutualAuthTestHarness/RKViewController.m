@@ -52,7 +52,7 @@
     NSIndexSet *statusCodeSet = RKStatusCodeIndexSetForClass(RKStatusCodeClassSuccessful);
     RKMapping *mapping = [MappingProvider userMapping];
     
-    RKResponseDescriptor *descriptor = [RKResponseDescriptor responseDescriptorWithMapping:mapping method:RKRequestMethodGET pathPattern:@"/api/users" keyPath:@"user" statusCodes:statusCodeSet];
+    RKResponseDescriptor *descriptor = [RKResponseDescriptor responseDescriptorWithMapping:mapping method:RKRequestMethodGET pathPattern:@"/api/users/5276666536ddce0db800009c" keyPath:@"user" statusCodes:statusCodeSet];
     
     RKObjectRequestOperation *operation = [[RKObjectRequestOperation alloc] initWithHTTPRequestOperation:bzOperation
                                                                                      responseDescriptors:@[descriptor]];
@@ -60,6 +60,7 @@
     [operation setCompletionBlockWithSuccess:^(RKObjectRequestOperation *operation, RKMappingResult *mappingResult) {
         
         BZUser* loginUser = (BZUser*)mappingResult.firstObject;
+        self.RKMessageTextView.text = loginUser.email;
         NSLog(@"%@", loginUser.email);
         
     }failure:^(RKObjectRequestOperation *operation, NSError *error) {

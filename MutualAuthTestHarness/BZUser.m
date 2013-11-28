@@ -10,23 +10,4 @@
 
 @implementation BZUser
 
-@dynamic agreedAt;
-@dynamic contactedByPermissions;
-@dynamic contactPermissions;
-@dynamic conversations;
-@dynamic dateOfBirth;
-@dynamic devices;
-@dynamic email;
-@dynamic firstName;
-@dynamic gender;
-@dynamic id;
-@dynamic lastName;
-@dynamic login;
-@dynamic mood;
-@dynamic password;
-@dynamic sentMessages;
-@dynamic status;
-@dynamic symbolPermissions;
-@dynamic zipCode;
-
 @end
