@@ -14,6 +14,7 @@
 + (RKMapping *)userMapping {
     RKObjectMapping *mapping = [RKObjectMapping mappingForClass:[BZUser class]];
     [mapping addAttributeMappingsFromArray:@[@"email"]];
+    [mapping addAttributeMappingsFromDictionary:@{@"first_name":@"firstName", @"last_name":@"lastName"}];
     return mapping;
 }
 

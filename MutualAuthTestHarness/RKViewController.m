@@ -60,7 +60,9 @@
     [operation setCompletionBlockWithSuccess:^(RKObjectRequestOperation *operation, RKMappingResult *mappingResult) {
         
         BZUser* loginUser = (BZUser*)mappingResult.firstObject;
-        self.RKMessageTextView.text = loginUser.email;
+        self.FirstNameLabel.text = loginUser.firstName;
+        self.LastNameLabel.text = loginUser.lastName;
+        self.EmailLabel.text = loginUser.email;
         NSLog(@"%@", loginUser.email);
         
     }failure:^(RKObjectRequestOperation *operation, NSError *error) {

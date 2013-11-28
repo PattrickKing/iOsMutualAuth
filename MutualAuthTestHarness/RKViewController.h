@@ -9,8 +9,11 @@
 #import <UIKit/UIKit.h>
 
 @interface RKViewController : UIViewController
+@property (weak, nonatomic) IBOutlet UILabel *FirstNameLabel;
+@property (weak, nonatomic) IBOutlet UILabel *LastNameLabel;
+@property (weak, nonatomic) IBOutlet UILabel *EmailLabel;
 
-@property (weak, nonatomic) IBOutlet UITextView *RKMessageTextView;
+
 
 - (IBAction)RKCallServiceButton:(id)sender;
 
