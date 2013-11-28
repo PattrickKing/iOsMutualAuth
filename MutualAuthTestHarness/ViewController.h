@@ -16,4 +16,6 @@
 
 @property (retain, nonatomic) NSURLConnection *connection;
 
+- (IBAction)UnwindToMain:(UIStoryboardSegue *)seque;
+
 @end

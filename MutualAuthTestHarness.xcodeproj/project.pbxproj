@@ -1,1287 +1,568 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
-<plist version="1.0">
-<dict>
-	<key>archiveVersion</key>
-	<string>1</string>
-	<key>classes</key>
-	<dict/>
-	<key>objectVersion</key>
-	<string>46</string>
-	<key>objects</key>
-	<dict>
-		<key>0F0637625AED4DC2B45148C7</key>
-		<dict>
-			<key>buildActionMask</key>
-			<string>2147483647</string>
-			<key>files</key>
-			<array/>
-			<key>inputPaths</key>
-			<array/>
-			<key>isa</key>
-			<string>PBXShellScriptBuildPhase</string>
-			<key>name</key>
-			<string>Copy Pods Resources</string>
-			<key>outputPaths</key>
-			<array/>
-			<key>runOnlyForDeploymentPostprocessing</key>
-			<string>0</string>
-			<key>shellPath</key>
-			<string>/bin/sh</string>
-			<key>shellScript</key>
-			<string>"${SRCROOT}/Pods/Pods-resources.sh"
-</string>
-			<key>showEnvVarsInLog</key>
-			<string>0</string>
-		</dict>
-		<key>2D3435FF456F4F438AB33F86</key>
-		<dict>
-			<key>buildActionMask</key>
-			<string>2147483647</string>
-			<key>files</key>
-			<array/>
-			<key>inputPaths</key>
-			<array/>
-			<key>isa</key>
-			<string>PBXShellScriptBuildPhase</string>
-			<key>name</key>
-			<string>Check Pods Manifest.lock</string>
-			<key>outputPaths</key>
-			<array/>
-			<key>runOnlyForDeploymentPostprocessing</key>
-			<string>0</string>
-			<key>shellPath</key>
-			<string>/bin/sh</string>
-			<key>shellScript</key>
-			<string>diff "${PODS_ROOT}/../Podfile.lock" "${PODS_ROOT}/Manifest.lock" &gt; /dev/null
-if [[ $? != 0 ]] ; then
-    cat &lt;&lt; EOM
-error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.
-EOM
-    exit 1
-fi
-</string>
-			<key>showEnvVarsInLog</key>
-			<string>0</string>
-		</dict>
-		<key>8039E7AFDBB24DB7AF994D76</key>
-		<dict>
-			<key>includeInIndex</key>
-			<string>1</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>text.xcconfig</string>
-			<key>name</key>
-			<string>Pods.xcconfig</string>
-			<key>path</key>
-			<string>Pods/Pods.xcconfig</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>A61059D6CE854CE1B1F17C9D</key>
-		<dict>
-			<key>explicitFileType</key>
-			<string>archive.ar</string>
-			<key>includeInIndex</key>
-			<string>0</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>path</key>
-			<string>libPods.a</string>
-			<key>sourceTree</key>
-			<string>BUILT_PRODUCTS_DIR</string>
-		</dict>
-		<key>CD4927F11846C2D500E28B9A</key>
-		<dict>
-			<key>fileEncoding</key>
-			<string>4</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.h</string>
-			<key>path</key>
-			<string>BZHTTPRequestOperation.h</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>CD4927F21846C2D500E28B9A</key>
-		<dict>
-			<key>fileEncoding</key>
-			<string>4</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.objc</string>
-			<key>path</key>
-			<string>BZHTTPRequestOperation.m</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>CD4927F31846C2D500E28B9A</key>
-		<dict>
-			<key>fileRef</key>
-			<string>CD4927F21846C2D500E28B9A</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>CD992FDB18440D3D005B962D</key>
-		<dict>
-			<key>children</key>
-			<array>
-				<string>CD992FEA1844C906005B962D</string>
-				<string>CD992FDC18440D3D005B962D</string>
-				<string>CD992FDD18440D3D005B962D</string>
-				<string>CD992FDE18440D3D005B962D</string>
-				<string>CD992FDF18440D3D005B962D</string>
-				<string>CD992FE018440D3D005B962D</string>
-				<string>CD992FE118440D3D005B962D</string>
-			</array>
-			<key>isa</key>
-			<string>PBXGroup</string>
-			<key>path</key>
-			<string>certs</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>CD992FDC18440D3D005B962D</key>
-		<dict>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>file</string>
-			<key>path</key>
-			<string>buzzClient-noncompat.p12</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>CD992FDD18440D3D005B962D</key>
-		<dict>
-			<key>fileEncoding</key>
-			<string>4</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>text</string>
-			<key>path</key>
-			<string>buzzClient.crt</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>CD992FDE18440D3D005B962D</key>
-		<dict>
-			<key>fileEncoding</key>
-			<string>4</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>text</string>
-			<key>path</key>
-			<string>buzzClient.csr</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>CD992FDF18440D3D005B962D</key>
-		<dict>
-			<key>fileEncoding</key>
-			<string>4</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>text</string>
-			<key>path</key>
-			<string>buzzClient.key</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>CD992FE018440D3D005B962D</key>
-		<dict>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>file</string>
-			<key>path</key>
-			<string>buzzClient.p12</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>CD992FE118440D3D005B962D</key>
-		<dict>
-			<key>fileEncoding</key>
-			<string>4</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>text</string>
-			<key>path</key>
-			<string>buzzClient.pem</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>CD992FE218440D3D005B962D</key>
-		<dict>
-			<key>fileRef</key>
-			<string>CD992FDC18440D3D005B962D</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>CD992FE318440D3D005B962D</key>
-		<dict>
-			<key>fileRef</key>
-			<string>CD992FDD18440D3D005B962D</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>CD992FE418440D3D005B962D</key>
-		<dict>
-			<key>fileRef</key>
-			<string>CD992FDE18440D3D005B962D</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>CD992FE518440D3D005B962D</key>
-		<dict>
-			<key>fileRef</key>
-			<string>CD992FDF18440D3D005B962D</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>CD992FE618440D3D005B962D</key>
-		<dict>
-			<key>fileRef</key>
-			<string>CD992FE018440D3D005B962D</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>CD992FE718440D3D005B962D</key>
-		<dict>
-			<key>fileRef</key>
-			<string>CD992FE118440D3D005B962D</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>CD992FEA1844C906005B962D</key>
-		<dict>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>file</string>
-			<key>path</key>
-			<string>buzzServer.der</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>CD992FEB1844C906005B962D</key>
-		<dict>
-			<key>fileRef</key>
-			<string>CD992FEA1844C906005B962D</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>CDFD35DC182E628300305665</key>
-		<dict>
-			<key>children</key>
-			<array>
-				<string>CDFD35EE182E628300305665</string>
-				<string>CDFD360D182E628300305665</string>
-				<string>CDFD35E7182E628300305665</string>
-				<string>CDFD35E6182E628300305665</string>
-				<string>8039E7AFDBB24DB7AF994D76</string>
-			</array>
-			<key>isa</key>
-			<string>PBXGroup</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>CDFD35DD182E628300305665</key>
-		<dict>
-			<key>attributes</key>
-			<dict>
-				<key>LastUpgradeCheck</key>
-				<string>0500</string>
-				<key>ORGANIZATIONNAME</key>
-				<string>Patrick King Consulting LLC</string>
-				<key>TargetAttributes</key>
-				<dict>
-					<key>CDFD3605182E628300305665</key>
-					<dict>
-						<key>TestTargetID</key>
-						<string>CDFD35E4182E628300305665</string>
-					</dict>
-				</dict>
-			</dict>
-			<key>buildConfigurationList</key>
-			<string>CDFD35E0182E628300305665</string>
-			<key>compatibilityVersion</key>
-			<string>Xcode 3.2</string>
-			<key>developmentRegion</key>
-			<string>English</string>
-			<key>hasScannedForEncodings</key>
-			<string>0</string>
-			<key>isa</key>
-			<string>PBXProject</string>
-			<key>knownRegions</key>
-			<array>
-				<string>en</string>
-				<string>Base</string>
-			</array>
-			<key>mainGroup</key>
-			<string>CDFD35DC182E628300305665</string>
-			<key>productRefGroup</key>
-			<string>CDFD35E6182E628300305665</string>
-			<key>projectDirPath</key>
-			<string></string>
-			<key>projectReferences</key>
-			<array/>
-			<key>projectRoot</key>
-			<string></string>
-			<key>targets</key>
-			<array>
-				<string>CDFD35E4182E628300305665</string>
-				<string>CDFD3605182E628300305665</string>
-			</array>
-		</dict>
-		<key>CDFD35E0182E628300305665</key>
-		<dict>
-			<key>buildConfigurations</key>
-			<array>
-				<string>CDFD3615182E628300305665</string>
-				<string>CDFD3616182E628300305665</string>
-			</array>
-			<key>defaultConfigurationIsVisible</key>
-			<string>0</string>
-			<key>defaultConfigurationName</key>
-			<string>Release</string>
-			<key>isa</key>
-			<string>XCConfigurationList</string>
-		</dict>
-		<key>CDFD35E1182E628300305665</key>
-		<dict>
-			<key>buildActionMask</key>
-			<string>2147483647</string>
-			<key>files</key>
-			<array>
-				<string>CDFD35FF182E628300305665</string>
-				<string>CD4927F31846C2D500E28B9A</string>
-				<string>CDFD35F9182E628300305665</string>
-				<string>CDFD35F5182E628300305665</string>
-			</array>
-			<key>isa</key>
-			<string>PBXSourcesBuildPhase</string>
-			<key>runOnlyForDeploymentPostprocessing</key>
-			<string>0</string>
-		</dict>
-		<key>CDFD35E2182E628300305665</key>
-		<dict>
-			<key>buildActionMask</key>
-			<string>2147483647</string>
-			<key>files</key>
-			<array>
-				<string>CDFD35EB182E628300305665</string>
-				<string>CDFD35ED182E628300305665</string>
-				<string>CDFD35E9182E628300305665</string>
-				<string>F9367FA6608349BDAB6189BD</string>
-			</array>
-			<key>isa</key>
-			<string>PBXFrameworksBuildPhase</string>
-			<key>runOnlyForDeploymentPostprocessing</key>
-			<string>0</string>
-		</dict>
-		<key>CDFD35E3182E628300305665</key>
-		<dict>
-			<key>buildActionMask</key>
-			<string>2147483647</string>
-			<key>files</key>
-			<array>
-				<string>CD992FE418440D3D005B962D</string>
-				<string>CD992FE718440D3D005B962D</string>
-				<string>CDFD3601182E628300305665</string>
-				<string>CD992FE618440D3D005B962D</string>
-				<string>CDFD35F3182E628300305665</string>
-				<string>CD992FE518440D3D005B962D</string>
-				<string>CD992FEB1844C906005B962D</string>
-				<string>CD992FE318440D3D005B962D</string>
-				<string>CDFD35FC182E628300305665</string>
-				<string>CD992FE218440D3D005B962D</string>
-			</array>
-			<key>isa</key>
-			<string>PBXResourcesBuildPhase</string>
-			<key>runOnlyForDeploymentPostprocessing</key>
-			<string>0</string>
-		</dict>
-		<key>CDFD35E4182E628300305665</key>
-		<dict>
-			<key>buildConfigurationList</key>
-			<string>CDFD3617182E628300305665</string>
-			<key>buildPhases</key>
-			<array>
-				<string>2D3435FF456F4F438AB33F86</string>
-				<string>CDFD35E1182E628300305665</string>
-				<string>CDFD35E2182E628300305665</string>
-				<string>CDFD35E3182E628300305665</string>
-				<string>0F0637625AED4DC2B45148C7</string>
-			</array>
-			<key>buildRules</key>
-			<array/>
-			<key>dependencies</key>
-			<array/>
-			<key>isa</key>
-			<string>PBXNativeTarget</string>
-			<key>name</key>
-			<string>MutualAuthTestHarness</string>
-			<key>productName</key>
-			<string>MutualAuthTestHarness</string>
-			<key>productReference</key>
-			<string>CDFD35E5182E628300305665</string>
-			<key>productType</key>
-			<string>com.apple.product-type.application</string>
-		</dict>
-		<key>CDFD35E5182E628300305665</key>
-		<dict>
-			<key>explicitFileType</key>
-			<string>wrapper.application</string>
-			<key>includeInIndex</key>
-			<string>0</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>path</key>
-			<string>MutualAuthTestHarness.app</string>
-			<key>sourceTree</key>
-			<string>BUILT_PRODUCTS_DIR</string>
-		</dict>
-		<key>CDFD35E6182E628300305665</key>
-		<dict>
-			<key>children</key>
-			<array>
-				<string>CDFD35E5182E628300305665</string>
-				<string>CDFD3606182E628300305665</string>
-			</array>
-			<key>isa</key>
-			<string>PBXGroup</string>
-			<key>name</key>
-			<string>Products</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>CDFD35E7182E628300305665</key>
-		<dict>
-			<key>children</key>
-			<array>
-				<string>CDFD35E8182E628300305665</string>
-				<string>CDFD35EA182E628300305665</string>
-				<string>CDFD35EC182E628300305665</string>
-				<string>CDFD3607182E628300305665</string>
-				<string>A61059D6CE854CE1B1F17C9D</string>
-			</array>
-			<key>isa</key>
-			<string>PBXGroup</string>
-			<key>name</key>
-			<string>Frameworks</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>CDFD35E8182E628300305665</key>
-		<dict>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>wrapper.framework</string>
-			<key>name</key>
-			<string>Foundation.framework</string>
-			<key>path</key>
-			<string>System/Library/Frameworks/Foundation.framework</string>
-			<key>sourceTree</key>
-			<string>SDKROOT</string>
-		</dict>
-		<key>CDFD35E9182E628300305665</key>
-		<dict>
-			<key>fileRef</key>
-			<string>CDFD35E8182E628300305665</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>CDFD35EA182E628300305665</key>
-		<dict>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>wrapper.framework</string>
-			<key>name</key>
-			<string>CoreGraphics.framework</string>
-			<key>path</key>
-			<string>System/Library/Frameworks/CoreGraphics.framework</string>
-			<key>sourceTree</key>
-			<string>SDKROOT</string>
-		</dict>
-		<key>CDFD35EB182E628300305665</key>
-		<dict>
-			<key>fileRef</key>
-			<string>CDFD35EA182E628300305665</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>CDFD35EC182E628300305665</key>
-		<dict>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>wrapper.framework</string>
-			<key>name</key>
-			<string>UIKit.framework</string>
-			<key>path</key>
-			<string>System/Library/Frameworks/UIKit.framework</string>
-			<key>sourceTree</key>
-			<string>SDKROOT</string>
-		</dict>
-		<key>CDFD35ED182E628300305665</key>
-		<dict>
-			<key>fileRef</key>
-			<string>CDFD35EC182E628300305665</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>CDFD35EE182E628300305665</key>
-		<dict>
-			<key>children</key>
-			<array>
-				<string>CDFD35F7182E628300305665</string>
-				<string>CDFD35F8182E628300305665</string>
-				<string>CDFD35FA182E628300305665</string>
-				<string>CDFD35FD182E628300305665</string>
-				<string>CDFD35FE182E628300305665</string>
-				<string>CD992FDB18440D3D005B962D</string>
-				<string>CDFD3600182E628300305665</string>
-				<string>CDFD35EF182E628300305665</string>
-				<string>CD4927F11846C2D500E28B9A</string>
-				<string>CD4927F21846C2D500E28B9A</string>
-			</array>
-			<key>isa</key>
-			<string>PBXGroup</string>
-			<key>path</key>
-			<string>MutualAuthTestHarness</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>CDFD35EF182E628300305665</key>
-		<dict>
-			<key>children</key>
-			<array>
-				<string>CDFD35F0182E628300305665</string>
-				<string>CDFD35F1182E628300305665</string>
-				<string>CDFD35F4182E628300305665</string>
-				<string>CDFD35F6182E628300305665</string>
-			</array>
-			<key>isa</key>
-			<string>PBXGroup</string>
-			<key>name</key>
-			<string>Supporting Files</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>CDFD35F0182E628300305665</key>
-		<dict>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>text.plist.xml</string>
-			<key>path</key>
-			<string>MutualAuthTestHarness-Info.plist</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>CDFD35F1182E628300305665</key>
-		<dict>
-			<key>children</key>
-			<array>
-				<string>CDFD35F2182E628300305665</string>
-			</array>
-			<key>isa</key>
-			<string>PBXVariantGroup</string>
-			<key>name</key>
-			<string>InfoPlist.strings</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>CDFD35F2182E628300305665</key>
-		<dict>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>text.plist.strings</string>
-			<key>name</key>
-			<string>en</string>
-			<key>path</key>
-			<string>en.lproj/InfoPlist.strings</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>CDFD35F3182E628300305665</key>
-		<dict>
-			<key>fileRef</key>
-			<string>CDFD35F1182E628300305665</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>CDFD35F4182E628300305665</key>
-		<dict>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.objc</string>
-			<key>path</key>
-			<string>main.m</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>CDFD35F5182E628300305665</key>
-		<dict>
-			<key>fileRef</key>
-			<string>CDFD35F4182E628300305665</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>CDFD35F6182E628300305665</key>
-		<dict>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.h</string>
-			<key>path</key>
-			<string>MutualAuthTestHarness-Prefix.pch</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>CDFD35F7182E628300305665</key>
-		<dict>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.h</string>
-			<key>path</key>
-			<string>AppDelegate.h</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>CDFD35F8182E628300305665</key>
-		<dict>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.objc</string>
-			<key>path</key>
-			<string>AppDelegate.m</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>CDFD35F9182E628300305665</key>
-		<dict>
-			<key>fileRef</key>
-			<string>CDFD35F8182E628300305665</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>CDFD35FA182E628300305665</key>
-		<dict>
-			<key>children</key>
-			<array>
-				<string>CDFD35FB182E628300305665</string>
-			</array>
-			<key>isa</key>
-			<string>PBXVariantGroup</string>
-			<key>name</key>
-			<string>Main.storyboard</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>CDFD35FB182E628300305665</key>
-		<dict>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>file.storyboard</string>
-			<key>name</key>
-			<string>Base</string>
-			<key>path</key>
-			<string>Base.lproj/Main.storyboard</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>CDFD35FC182E628300305665</key>
-		<dict>
-			<key>fileRef</key>
-			<string>CDFD35FA182E628300305665</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>CDFD35FD182E628300305665</key>
-		<dict>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.h</string>
-			<key>path</key>
-			<string>ViewController.h</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>CDFD35FE182E628300305665</key>
-		<dict>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.objc</string>
-			<key>path</key>
-			<string>ViewController.m</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>CDFD35FF182E628300305665</key>
-		<dict>
-			<key>fileRef</key>
-			<string>CDFD35FE182E628300305665</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>CDFD3600182E628300305665</key>
-		<dict>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>folder.assetcatalog</string>
-			<key>path</key>
-			<string>Images.xcassets</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>CDFD3601182E628300305665</key>
-		<dict>
-			<key>fileRef</key>
-			<string>CDFD3600182E628300305665</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>CDFD3602182E628300305665</key>
-		<dict>
-			<key>buildActionMask</key>
-			<string>2147483647</string>
-			<key>files</key>
-			<array>
-				<string>CDFD3614182E628300305665</string>
-			</array>
-			<key>isa</key>
-			<string>PBXSourcesBuildPhase</string>
-			<key>runOnlyForDeploymentPostprocessing</key>
-			<string>0</string>
-		</dict>
-		<key>CDFD3603182E628300305665</key>
-		<dict>
-			<key>buildActionMask</key>
-			<string>2147483647</string>
-			<key>files</key>
-			<array>
-				<string>CDFD3608182E628300305665</string>
-				<string>CDFD360A182E628300305665</string>
-				<string>CDFD3609182E628300305665</string>
-			</array>
-			<key>isa</key>
-			<string>PBXFrameworksBuildPhase</string>
-			<key>runOnlyForDeploymentPostprocessing</key>
-			<string>0</string>
-		</dict>
-		<key>CDFD3604182E628300305665</key>
-		<dict>
-			<key>buildActionMask</key>
-			<string>2147483647</string>
-			<key>files</key>
-			<array>
-				<string>CDFD3612182E628300305665</string>
-			</array>
-			<key>isa</key>
-			<string>PBXResourcesBuildPhase</string>
-			<key>runOnlyForDeploymentPostprocessing</key>
-			<string>0</string>
-		</dict>
-		<key>CDFD3605182E628300305665</key>
-		<dict>
-			<key>buildConfigurationList</key>
-			<string>CDFD361A182E628300305665</string>
-			<key>buildPhases</key>
-			<array>
-				<string>CDFD3602182E628300305665</string>
-				<string>CDFD3603182E628300305665</string>
-				<string>CDFD3604182E628300305665</string>
-			</array>
-			<key>buildRules</key>
-			<array/>
-			<key>dependencies</key>
-			<array>
-				<string>CDFD360C182E628300305665</string>
-			</array>
-			<key>isa</key>
-			<string>PBXNativeTarget</string>
-			<key>name</key>
-			<string>MutualAuthTestHarnessTests</string>
-			<key>productName</key>
-			<string>MutualAuthTestHarnessTests</string>
-			<key>productReference</key>
-			<string>CDFD3606182E628300305665</string>
-			<key>productType</key>
-			<string>com.apple.product-type.bundle.unit-test</string>
-		</dict>
-		<key>CDFD3606182E628300305665</key>
-		<dict>
-			<key>explicitFileType</key>
-			<string>wrapper.cfbundle</string>
-			<key>includeInIndex</key>
-			<string>0</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>path</key>
-			<string>MutualAuthTestHarnessTests.xctest</string>
-			<key>sourceTree</key>
-			<string>BUILT_PRODUCTS_DIR</string>
-		</dict>
-		<key>CDFD3607182E628300305665</key>
-		<dict>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>wrapper.framework</string>
-			<key>name</key>
-			<string>XCTest.framework</string>
-			<key>path</key>
-			<string>Library/Frameworks/XCTest.framework</string>
-			<key>sourceTree</key>
-			<string>DEVELOPER_DIR</string>
-		</dict>
-		<key>CDFD3608182E628300305665</key>
-		<dict>
-			<key>fileRef</key>
-			<string>CDFD3607182E628300305665</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>CDFD3609182E628300305665</key>
-		<dict>
-			<key>fileRef</key>
-			<string>CDFD35E8182E628300305665</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>CDFD360A182E628300305665</key>
-		<dict>
-			<key>fileRef</key>
-			<string>CDFD35EC182E628300305665</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>CDFD360B182E628300305665</key>
-		<dict>
-			<key>containerPortal</key>
-			<string>CDFD35DD182E628300305665</string>
-			<key>isa</key>
-			<string>PBXContainerItemProxy</string>
-			<key>proxyType</key>
-			<string>1</string>
-			<key>remoteGlobalIDString</key>
-			<string>CDFD35E4182E628300305665</string>
-			<key>remoteInfo</key>
-			<string>MutualAuthTestHarness</string>
-		</dict>
-		<key>CDFD360C182E628300305665</key>
-		<dict>
-			<key>isa</key>
-			<string>PBXTargetDependency</string>
-			<key>target</key>
-			<string>CDFD35E4182E628300305665</string>
-			<key>targetProxy</key>
-			<string>CDFD360B182E628300305665</string>
-		</dict>
-		<key>CDFD360D182E628300305665</key>
-		<dict>
-			<key>children</key>
-			<array>
-				<string>CDFD3613182E628300305665</string>
-				<string>CDFD360E182E628300305665</string>
-			</array>
-			<key>isa</key>
-			<string>PBXGroup</string>
-			<key>path</key>
-			<string>MutualAuthTestHarnessTests</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>CDFD360E182E628300305665</key>
-		<dict>
-			<key>children</key>
-			<array>
-				<string>CDFD360F182E628300305665</string>
-				<string>CDFD3610182E628300305665</string>
-			</array>
-			<key>isa</key>
-			<string>PBXGroup</string>
-			<key>name</key>
-			<string>Supporting Files</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>CDFD360F182E628300305665</key>
-		<dict>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>text.plist.xml</string>
-			<key>path</key>
-			<string>MutualAuthTestHarnessTests-Info.plist</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>CDFD3610182E628300305665</key>
-		<dict>
-			<key>children</key>
-			<array>
-				<string>CDFD3611182E628300305665</string>
-			</array>
-			<key>isa</key>
-			<string>PBXVariantGroup</string>
-			<key>name</key>
-			<string>InfoPlist.strings</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>CDFD3611182E628300305665</key>
-		<dict>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>text.plist.strings</string>
-			<key>name</key>
-			<string>en</string>
-			<key>path</key>
-			<string>en.lproj/InfoPlist.strings</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>CDFD3612182E628300305665</key>
-		<dict>
-			<key>fileRef</key>
-			<string>CDFD3610182E628300305665</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>CDFD3613182E628300305665</key>
-		<dict>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.objc</string>
-			<key>path</key>
-			<string>MutualAuthTestHarnessTests.m</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>CDFD3614182E628300305665</key>
-		<dict>
-			<key>fileRef</key>
-			<string>CDFD3613182E628300305665</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>CDFD3615182E628300305665</key>
-		<dict>
-			<key>buildSettings</key>
-			<dict>
-				<key>ALWAYS_SEARCH_USER_PATHS</key>
-				<string>NO</string>
-				<key>ARCHS</key>
-				<string>$(ARCHS_STANDARD_INCLUDING_64_BIT)</string>
-				<key>CLANG_CXX_LANGUAGE_STANDARD</key>
-				<string>gnu++0x</string>
-				<key>CLANG_CXX_LIBRARY</key>
-				<string>libc++</string>
-				<key>CLANG_ENABLE_MODULES</key>
-				<string>YES</string>
-				<key>CLANG_ENABLE_OBJC_ARC</key>
-				<string>YES</string>
-				<key>CLANG_WARN_BOOL_CONVERSION</key>
-				<string>YES</string>
-				<key>CLANG_WARN_CONSTANT_CONVERSION</key>
-				<string>YES</string>
-				<key>CLANG_WARN_DIRECT_OBJC_ISA_USAGE</key>
-				<string>YES_ERROR</string>
-				<key>CLANG_WARN_EMPTY_BODY</key>
-				<string>YES</string>
-				<key>CLANG_WARN_ENUM_CONVERSION</key>
-				<string>YES</string>
-				<key>CLANG_WARN_INT_CONVERSION</key>
-				<string>YES</string>
-				<key>CLANG_WARN_OBJC_ROOT_CLASS</key>
-				<string>YES_ERROR</string>
-				<key>CLANG_WARN__DUPLICATE_METHOD_MATCH</key>
-				<string>YES</string>
-				<key>CODE_SIGN_IDENTITY[sdk=iphoneos*]</key>
-				<string>iPhone Developer</string>
-				<key>COPY_PHASE_STRIP</key>
-				<string>NO</string>
-				<key>GCC_C_LANGUAGE_STANDARD</key>
-				<string>gnu99</string>
-				<key>GCC_DYNAMIC_NO_PIC</key>
-				<string>NO</string>
-				<key>GCC_OPTIMIZATION_LEVEL</key>
-				<string>0</string>
-				<key>GCC_PREPROCESSOR_DEFINITIONS</key>
-				<array>
-					<string>DEBUG=1</string>
-					<string>$(inherited)</string>
-				</array>
-				<key>GCC_SYMBOLS_PRIVATE_EXTERN</key>
-				<string>NO</string>
-				<key>GCC_WARN_64_TO_32_BIT_CONVERSION</key>
-				<string>YES</string>
-				<key>GCC_WARN_ABOUT_RETURN_TYPE</key>
-				<string>YES_ERROR</string>
-				<key>GCC_WARN_UNDECLARED_SELECTOR</key>
-				<string>YES</string>
-				<key>GCC_WARN_UNINITIALIZED_AUTOS</key>
-				<string>YES</string>
-				<key>GCC_WARN_UNUSED_FUNCTION</key>
-				<string>YES</string>
-				<key>GCC_WARN_UNUSED_VARIABLE</key>
-				<string>YES</string>
-				<key>IPHONEOS_DEPLOYMENT_TARGET</key>
-				<string>7.0</string>
-				<key>ONLY_ACTIVE_ARCH</key>
-				<string>YES</string>
-				<key>SDKROOT</key>
-				<string>iphoneos</string>
-			</dict>
-			<key>isa</key>
-			<string>XCBuildConfiguration</string>
-			<key>name</key>
-			<string>Debug</string>
-		</dict>
-		<key>CDFD3616182E628300305665</key>
-		<dict>
-			<key>buildSettings</key>
-			<dict>
-				<key>ALWAYS_SEARCH_USER_PATHS</key>
-				<string>NO</string>
-				<key>ARCHS</key>
-				<string>$(ARCHS_STANDARD_INCLUDING_64_BIT)</string>
-				<key>CLANG_CXX_LANGUAGE_STANDARD</key>
-				<string>gnu++0x</string>
-				<key>CLANG_CXX_LIBRARY</key>
-				<string>libc++</string>
-				<key>CLANG_ENABLE_MODULES</key>
-				<string>YES</string>
-				<key>CLANG_ENABLE_OBJC_ARC</key>
-				<string>YES</string>
-				<key>CLANG_WARN_BOOL_CONVERSION</key>
-				<string>YES</string>
-				<key>CLANG_WARN_CONSTANT_CONVERSION</key>
-				<string>YES</string>
-				<key>CLANG_WARN_DIRECT_OBJC_ISA_USAGE</key>
-				<string>YES_ERROR</string>
-				<key>CLANG_WARN_EMPTY_BODY</key>
-				<string>YES</string>
-				<key>CLANG_WARN_ENUM_CONVERSION</key>
-				<string>YES</string>
-				<key>CLANG_WARN_INT_CONVERSION</key>
-				<string>YES</string>
-				<key>CLANG_WARN_OBJC_ROOT_CLASS</key>
-				<string>YES_ERROR</string>
-				<key>CLANG_WARN__DUPLICATE_METHOD_MATCH</key>
-				<string>YES</string>
-				<key>CODE_SIGN_IDENTITY[sdk=iphoneos*]</key>
-				<string>iPhone Developer</string>
-				<key>COPY_PHASE_STRIP</key>
-				<string>YES</string>
-				<key>ENABLE_NS_ASSERTIONS</key>
-				<string>NO</string>
-				<key>GCC_C_LANGUAGE_STANDARD</key>
-				<string>gnu99</string>
-				<key>GCC_WARN_64_TO_32_BIT_CONVERSION</key>
-				<string>YES</string>
-				<key>GCC_WARN_ABOUT_RETURN_TYPE</key>
-				<string>YES_ERROR</string>
-				<key>GCC_WARN_UNDECLARED_SELECTOR</key>
-				<string>YES</string>
-				<key>GCC_WARN_UNINITIALIZED_AUTOS</key>
-				<string>YES</string>
-				<key>GCC_WARN_UNUSED_FUNCTION</key>
-				<string>YES</string>
-				<key>GCC_WARN_UNUSED_VARIABLE</key>
-				<string>YES</string>
-				<key>IPHONEOS_DEPLOYMENT_TARGET</key>
-				<string>7.0</string>
-				<key>SDKROOT</key>
-				<string>iphoneos</string>
-				<key>VALIDATE_PRODUCT</key>
-				<string>YES</string>
-			</dict>
-			<key>isa</key>
-			<string>XCBuildConfiguration</string>
-			<key>name</key>
-			<string>Release</string>
-		</dict>
-		<key>CDFD3617182E628300305665</key>
-		<dict>
-			<key>buildConfigurations</key>
-			<array>
-				<string>CDFD3618182E628300305665</string>
-				<string>CDFD3619182E628300305665</string>
-			</array>
-			<key>defaultConfigurationIsVisible</key>
-			<string>0</string>
-			<key>defaultConfigurationName</key>
-			<string>Release</string>
-			<key>isa</key>
-			<string>XCConfigurationList</string>
-		</dict>
-		<key>CDFD3618182E628300305665</key>
-		<dict>
-			<key>baseConfigurationReference</key>
-			<string>8039E7AFDBB24DB7AF994D76</string>
-			<key>buildSettings</key>
-			<dict>
-				<key>ASSETCATALOG_COMPILER_APPICON_NAME</key>
-				<string>AppIcon</string>
-				<key>ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME</key>
-				<string>LaunchImage</string>
-				<key>GCC_PRECOMPILE_PREFIX_HEADER</key>
-				<string>YES</string>
-				<key>GCC_PREFIX_HEADER</key>
-				<string>MutualAuthTestHarness/MutualAuthTestHarness-Prefix.pch</string>
-				<key>INFOPLIST_FILE</key>
-				<string>MutualAuthTestHarness/MutualAuthTestHarness-Info.plist</string>
-				<key>PRODUCT_NAME</key>
-				<string>$(TARGET_NAME)</string>
-				<key>WRAPPER_EXTENSION</key>
-				<string>app</string>
-			</dict>
-			<key>isa</key>
-			<string>XCBuildConfiguration</string>
-			<key>name</key>
-			<string>Debug</string>
-		</dict>
-		<key>CDFD3619182E628300305665</key>
-		<dict>
-			<key>baseConfigurationReference</key>
-			<string>8039E7AFDBB24DB7AF994D76</string>
-			<key>buildSettings</key>
-			<dict>
-				<key>ASSETCATALOG_COMPILER_APPICON_NAME</key>
-				<string>AppIcon</string>
-				<key>ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME</key>
-				<string>LaunchImage</string>
-				<key>GCC_PRECOMPILE_PREFIX_HEADER</key>
-				<string>YES</string>
-				<key>GCC_PREFIX_HEADER</key>
-				<string>MutualAuthTestHarness/MutualAuthTestHarness-Prefix.pch</string>
-				<key>INFOPLIST_FILE</key>
-				<string>MutualAuthTestHarness/MutualAuthTestHarness-Info.plist</string>
-				<key>PRODUCT_NAME</key>
-				<string>$(TARGET_NAME)</string>
-				<key>WRAPPER_EXTENSION</key>
-				<string>app</string>
-			</dict>
-			<key>isa</key>
-			<string>XCBuildConfiguration</string>
-			<key>name</key>
-			<string>Release</string>
-		</dict>
-		<key>CDFD361A182E628300305665</key>
-		<dict>
-			<key>buildConfigurations</key>
-			<array>
-				<string>CDFD361B182E628300305665</string>
-				<string>CDFD361C182E628300305665</string>
-			</array>
-			<key>defaultConfigurationIsVisible</key>
-			<string>0</string>
-			<key>defaultConfigurationName</key>
-			<string>Release</string>
-			<key>isa</key>
-			<string>XCConfigurationList</string>
-		</dict>
-		<key>CDFD361B182E628300305665</key>
-		<dict>
-			<key>buildSettings</key>
-			<dict>
-				<key>ARCHS</key>
-				<string>$(ARCHS_STANDARD_INCLUDING_64_BIT)</string>
-				<key>BUNDLE_LOADER</key>
-				<string>$(BUILT_PRODUCTS_DIR)/MutualAuthTestHarness.app/MutualAuthTestHarness</string>
-				<key>FRAMEWORK_SEARCH_PATHS</key>
-				<array>
-					<string>$(SDKROOT)/Developer/Library/Frameworks</string>
-					<string>$(inherited)</string>
-					<string>$(DEVELOPER_FRAMEWORKS_DIR)</string>
-				</array>
-				<key>GCC_PRECOMPILE_PREFIX_HEADER</key>
-				<string>YES</string>
-				<key>GCC_PREFIX_HEADER</key>
-				<string>MutualAuthTestHarness/MutualAuthTestHarness-Prefix.pch</string>
-				<key>GCC_PREPROCESSOR_DEFINITIONS</key>
-				<array>
-					<string>DEBUG=1</string>
-					<string>$(inherited)</string>
-				</array>
-				<key>INFOPLIST_FILE</key>
-				<string>MutualAuthTestHarnessTests/MutualAuthTestHarnessTests-Info.plist</string>
-				<key>PRODUCT_NAME</key>
-				<string>$(TARGET_NAME)</string>
-				<key>TEST_HOST</key>
-				<string>$(BUNDLE_LOADER)</string>
-				<key>WRAPPER_EXTENSION</key>
-				<string>xctest</string>
-			</dict>
-			<key>isa</key>
-			<string>XCBuildConfiguration</string>
-			<key>name</key>
-			<string>Debug</string>
-		</dict>
-		<key>CDFD361C182E628300305665</key>
-		<dict>
-			<key>buildSettings</key>
-			<dict>
-				<key>ARCHS</key>
-				<string>$(ARCHS_STANDARD_INCLUDING_64_BIT)</string>
-				<key>BUNDLE_LOADER</key>
-				<string>$(BUILT_PRODUCTS_DIR)/MutualAuthTestHarness.app/MutualAuthTestHarness</string>
-				<key>FRAMEWORK_SEARCH_PATHS</key>
-				<array>
-					<string>$(SDKROOT)/Developer/Library/Frameworks</string>
-					<string>$(inherited)</string>
-					<string>$(DEVELOPER_FRAMEWORKS_DIR)</string>
-				</array>
-				<key>GCC_PRECOMPILE_PREFIX_HEADER</key>
-				<string>YES</string>
-				<key>GCC_PREFIX_HEADER</key>
-				<string>MutualAuthTestHarness/MutualAuthTestHarness-Prefix.pch</string>
-				<key>INFOPLIST_FILE</key>
-				<string>MutualAuthTestHarnessTests/MutualAuthTestHarnessTests-Info.plist</string>
-				<key>PRODUCT_NAME</key>
-				<string>$(TARGET_NAME)</string>
-				<key>TEST_HOST</key>
-				<string>$(BUNDLE_LOADER)</string>
-				<key>WRAPPER_EXTENSION</key>
-				<string>xctest</string>
-			</dict>
-			<key>isa</key>
-			<string>XCBuildConfiguration</string>
-			<key>name</key>
-			<string>Release</string>
-		</dict>
-		<key>F9367FA6608349BDAB6189BD</key>
-		<dict>
-			<key>fileRef</key>
-			<string>A61059D6CE854CE1B1F17C9D</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-	</dict>
-	<key>rootObject</key>
-	<string>CDFD35DD182E628300305665</string>
-</dict>
-</plist>
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		CD4927F31846C2D500E28B9A /* BZHTTPRequestOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = CD4927F21846C2D500E28B9A /* BZHTTPRequestOperation.m */; };
+		CD4927F61846D22500E28B9A /* RKViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CD4927F51846D22500E28B9A /* RKViewController.m */; };
+		CD992FE218440D3D005B962D /* buzzClient-noncompat.p12 in Resources */ = {isa = PBXBuildFile; fileRef = CD992FDC18440D3D005B962D /* buzzClient-noncompat.p12 */; };
+		CD992FE318440D3D005B962D /* buzzClient.crt in Resources */ = {isa = PBXBuildFile; fileRef = CD992FDD18440D3D005B962D /* buzzClient.crt */; };
+		CD992FE418440D3D005B962D /* buzzClient.csr in Resources */ = {isa = PBXBuildFile; fileRef = CD992FDE18440D3D005B962D /* buzzClient.csr */; };
+		CD992FE518440D3D005B962D /* buzzClient.key in Resources */ = {isa = PBXBuildFile; fileRef = CD992FDF18440D3D005B962D /* buzzClient.key */; };
+		CD992FE618440D3D005B962D /* buzzClient.p12 in Resources */ = {isa = PBXBuildFile; fileRef = CD992FE018440D3D005B962D /* buzzClient.p12 */; };
+		CD992FE718440D3D005B962D /* buzzClient.pem in Resources */ = {isa = PBXBuildFile; fileRef = CD992FE118440D3D005B962D /* buzzClient.pem */; };
+		CD992FEB1844C906005B962D /* buzzServer.der in Resources */ = {isa = PBXBuildFile; fileRef = CD992FEA1844C906005B962D /* buzzServer.der */; };
+		CDFD35E9182E628300305665 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CDFD35E8182E628300305665 /* Foundation.framework */; };
+		CDFD35EB182E628300305665 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CDFD35EA182E628300305665 /* CoreGraphics.framework */; };
+		CDFD35ED182E628300305665 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CDFD35EC182E628300305665 /* UIKit.framework */; };
+		CDFD35F3182E628300305665 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = CDFD35F1182E628300305665 /* InfoPlist.strings */; };
+		CDFD35F5182E628300305665 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = CDFD35F4182E628300305665 /* main.m */; };
+		CDFD35F9182E628300305665 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = CDFD35F8182E628300305665 /* AppDelegate.m */; };
+		CDFD35FC182E628300305665 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CDFD35FA182E628300305665 /* Main.storyboard */; };
+		CDFD35FF182E628300305665 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CDFD35FE182E628300305665 /* ViewController.m */; };
+		CDFD3601182E628300305665 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CDFD3600182E628300305665 /* Images.xcassets */; };
+		CDFD3608182E628300305665 /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CDFD3607182E628300305665 /* XCTest.framework */; };
+		CDFD3609182E628300305665 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CDFD35E8182E628300305665 /* Foundation.framework */; };
+		CDFD360A182E628300305665 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CDFD35EC182E628300305665 /* UIKit.framework */; };
+		CDFD3612182E628300305665 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = CDFD3610182E628300305665 /* InfoPlist.strings */; };
+		CDFD3614182E628300305665 /* MutualAuthTestHarnessTests.m in Sources */ = {isa = PBXBuildFile; fileRef = CDFD3613182E628300305665 /* MutualAuthTestHarnessTests.m */; };
+		F9367FA6608349BDAB6189BD /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = A61059D6CE854CE1B1F17C9D /* libPods.a */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		CDFD360B182E628300305665 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = CDFD35DD182E628300305665 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = CDFD35E4182E628300305665;
+			remoteInfo = MutualAuthTestHarness;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		8039E7AFDBB24DB7AF994D76 /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = "<group>"; };
+		A61059D6CE854CE1B1F17C9D /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		CD4927F11846C2D500E28B9A /* BZHTTPRequestOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BZHTTPRequestOperation.h; sourceTree = "<group>"; };
+		CD4927F21846C2D500E28B9A /* BZHTTPRequestOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BZHTTPRequestOperation.m; sourceTree = "<group>"; };
+		CD4927F41846D22500E28B9A /* RKViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RKViewController.h; sourceTree = "<group>"; };
+		CD4927F51846D22500E28B9A /* RKViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RKViewController.m; sourceTree = "<group>"; };
+		CD992FDC18440D3D005B962D /* buzzClient-noncompat.p12 */ = {isa = PBXFileReference; lastKnownFileType = file; path = "buzzClient-noncompat.p12"; sourceTree = "<group>"; };
+		CD992FDD18440D3D005B962D /* buzzClient.crt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = buzzClient.crt; sourceTree = "<group>"; };
+		CD992FDE18440D3D005B962D /* buzzClient.csr */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = buzzClient.csr; sourceTree = "<group>"; };
+		CD992FDF18440D3D005B962D /* buzzClient.key */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = buzzClient.key; sourceTree = "<group>"; };
+		CD992FE018440D3D005B962D /* buzzClient.p12 */ = {isa = PBXFileReference; lastKnownFileType = file; path = buzzClient.p12; sourceTree = "<group>"; };
+		CD992FE118440D3D005B962D /* buzzClient.pem */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = buzzClient.pem; sourceTree = "<group>"; };
+		CD992FEA1844C906005B962D /* buzzServer.der */ = {isa = PBXFileReference; lastKnownFileType = file; path = buzzServer.der; sourceTree = "<group>"; };
+		CDFD35E5182E628300305665 /* MutualAuthTestHarness.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MutualAuthTestHarness.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		CDFD35E8182E628300305665 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		CDFD35EA182E628300305665 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		CDFD35EC182E628300305665 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		CDFD35F0182E628300305665 /* MutualAuthTestHarness-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "MutualAuthTestHarness-Info.plist"; sourceTree = "<group>"; };
+		CDFD35F2182E628300305665 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		CDFD35F4182E628300305665 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		CDFD35F6182E628300305665 /* MutualAuthTestHarness-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "MutualAuthTestHarness-Prefix.pch"; sourceTree = "<group>"; };
+		CDFD35F7182E628300305665 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		CDFD35F8182E628300305665 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		CDFD35FB182E628300305665 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		CDFD35FD182E628300305665 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		CDFD35FE182E628300305665 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		CDFD3600182E628300305665 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		CDFD3606182E628300305665 /* MutualAuthTestHarnessTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MutualAuthTestHarnessTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		CDFD3607182E628300305665 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
+		CDFD360F182E628300305665 /* MutualAuthTestHarnessTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "MutualAuthTestHarnessTests-Info.plist"; sourceTree = "<group>"; };
+		CDFD3611182E628300305665 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		CDFD3613182E628300305665 /* MutualAuthTestHarnessTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MutualAuthTestHarnessTests.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		CDFD35E2182E628300305665 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CDFD35EB182E628300305665 /* CoreGraphics.framework in Frameworks */,
+				CDFD35ED182E628300305665 /* UIKit.framework in Frameworks */,
+				CDFD35E9182E628300305665 /* Foundation.framework in Frameworks */,
+				F9367FA6608349BDAB6189BD /* libPods.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CDFD3603182E628300305665 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CDFD3608182E628300305665 /* XCTest.framework in Frameworks */,
+				CDFD360A182E628300305665 /* UIKit.framework in Frameworks */,
+				CDFD3609182E628300305665 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		CD992FDB18440D3D005B962D /* certs */ = {
+			isa = PBXGroup;
+			children = (
+				CD992FEA1844C906005B962D /* buzzServer.der */,
+				CD992FDC18440D3D005B962D /* buzzClient-noncompat.p12 */,
+				CD992FDD18440D3D005B962D /* buzzClient.crt */,
+				CD992FDE18440D3D005B962D /* buzzClient.csr */,
+				CD992FDF18440D3D005B962D /* buzzClient.key */,
+				CD992FE018440D3D005B962D /* buzzClient.p12 */,
+				CD992FE118440D3D005B962D /* buzzClient.pem */,
+			);
+			path = certs;
+			sourceTree = "<group>";
+		};
+		CDFD35DC182E628300305665 = {
+			isa = PBXGroup;
+			children = (
+				CDFD35EE182E628300305665 /* MutualAuthTestHarness */,
+				CDFD360D182E628300305665 /* MutualAuthTestHarnessTests */,
+				CDFD35E7182E628300305665 /* Frameworks */,
+				CDFD35E6182E628300305665 /* Products */,
+				8039E7AFDBB24DB7AF994D76 /* Pods.xcconfig */,
+			);
+			sourceTree = "<group>";
+		};
+		CDFD35E6182E628300305665 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				CDFD35E5182E628300305665 /* MutualAuthTestHarness.app */,
+				CDFD3606182E628300305665 /* MutualAuthTestHarnessTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		CDFD35E7182E628300305665 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				CDFD35E8182E628300305665 /* Foundation.framework */,
+				CDFD35EA182E628300305665 /* CoreGraphics.framework */,
+				CDFD35EC182E628300305665 /* UIKit.framework */,
+				CDFD3607182E628300305665 /* XCTest.framework */,
+				A61059D6CE854CE1B1F17C9D /* libPods.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		CDFD35EE182E628300305665 /* MutualAuthTestHarness */ = {
+			isa = PBXGroup;
+			children = (
+				CDFD35F7182E628300305665 /* AppDelegate.h */,
+				CDFD35F8182E628300305665 /* AppDelegate.m */,
+				CDFD35FA182E628300305665 /* Main.storyboard */,
+				CDFD35FD182E628300305665 /* ViewController.h */,
+				CDFD35FE182E628300305665 /* ViewController.m */,
+				CD992FDB18440D3D005B962D /* certs */,
+				CDFD3600182E628300305665 /* Images.xcassets */,
+				CDFD35EF182E628300305665 /* Supporting Files */,
+				CD4927F11846C2D500E28B9A /* BZHTTPRequestOperation.h */,
+				CD4927F21846C2D500E28B9A /* BZHTTPRequestOperation.m */,
+				CD4927F41846D22500E28B9A /* RKViewController.h */,
+				CD4927F51846D22500E28B9A /* RKViewController.m */,
+			);
+			path = MutualAuthTestHarness;
+			sourceTree = "<group>";
+		};
+		CDFD35EF182E628300305665 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				CDFD35F0182E628300305665 /* MutualAuthTestHarness-Info.plist */,
+				CDFD35F1182E628300305665 /* InfoPlist.strings */,
+				CDFD35F4182E628300305665 /* main.m */,
+				CDFD35F6182E628300305665 /* MutualAuthTestHarness-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		CDFD360D182E628300305665 /* MutualAuthTestHarnessTests */ = {
+			isa = PBXGroup;
+			children = (
+				CDFD3613182E628300305665 /* MutualAuthTestHarnessTests.m */,
+				CDFD360E182E628300305665 /* Supporting Files */,
+			);
+			path = MutualAuthTestHarnessTests;
+			sourceTree = "<group>";
+		};
+		CDFD360E182E628300305665 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				CDFD360F182E628300305665 /* MutualAuthTestHarnessTests-Info.plist */,
+				CDFD3610182E628300305665 /* InfoPlist.strings */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		CDFD35E4182E628300305665 /* MutualAuthTestHarness */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = CDFD3617182E628300305665 /* Build configuration list for PBXNativeTarget "MutualAuthTestHarness" */;
+			buildPhases = (
+				2D3435FF456F4F438AB33F86 /* Check Pods Manifest.lock */,
+				CDFD35E1182E628300305665 /* Sources */,
+				CDFD35E2182E628300305665 /* Frameworks */,
+				CDFD35E3182E628300305665 /* Resources */,
+				0F0637625AED4DC2B45148C7 /* Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = MutualAuthTestHarness;
+			productName = MutualAuthTestHarness;
+			productReference = CDFD35E5182E628300305665 /* MutualAuthTestHarness.app */;
+			productType = "com.apple.product-type.application";
+		};
+		CDFD3605182E628300305665 /* MutualAuthTestHarnessTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = CDFD361A182E628300305665 /* Build configuration list for PBXNativeTarget "MutualAuthTestHarnessTests" */;
+			buildPhases = (
+				CDFD3602182E628300305665 /* Sources */,
+				CDFD3603182E628300305665 /* Frameworks */,
+				CDFD3604182E628300305665 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				CDFD360C182E628300305665 /* PBXTargetDependency */,
+			);
+			name = MutualAuthTestHarnessTests;
+			productName = MutualAuthTestHarnessTests;
+			productReference = CDFD3606182E628300305665 /* MutualAuthTestHarnessTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		CDFD35DD182E628300305665 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0500;
+				ORGANIZATIONNAME = "Patrick King Consulting LLC";
+				TargetAttributes = {
+					CDFD3605182E628300305665 = {
+						TestTargetID = CDFD35E4182E628300305665;
+					};
+				};
+			};
+			buildConfigurationList = CDFD35E0182E628300305665 /* Build configuration list for PBXProject "MutualAuthTestHarness" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = CDFD35DC182E628300305665;
+			productRefGroup = CDFD35E6182E628300305665 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				CDFD35E4182E628300305665 /* MutualAuthTestHarness */,
+				CDFD3605182E628300305665 /* MutualAuthTestHarnessTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		CDFD35E3182E628300305665 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CD992FE418440D3D005B962D /* buzzClient.csr in Resources */,
+				CD992FE718440D3D005B962D /* buzzClient.pem in Resources */,
+				CDFD3601182E628300305665 /* Images.xcassets in Resources */,
+				CD992FE618440D3D005B962D /* buzzClient.p12 in Resources */,
+				CDFD35F3182E628300305665 /* InfoPlist.strings in Resources */,
+				CD992FE518440D3D005B962D /* buzzClient.key in Resources */,
+				CD992FEB1844C906005B962D /* buzzServer.der in Resources */,
+				CD992FE318440D3D005B962D /* buzzClient.crt in Resources */,
+				CDFD35FC182E628300305665 /* Main.storyboard in Resources */,
+				CD992FE218440D3D005B962D /* buzzClient-noncompat.p12 in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CDFD3604182E628300305665 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CDFD3612182E628300305665 /* InfoPlist.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		0F0637625AED4DC2B45148C7 /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Pods-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		2D3435FF456F4F438AB33F86 /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		CDFD35E1182E628300305665 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CD4927F61846D22500E28B9A /* RKViewController.m in Sources */,
+				CDFD35FF182E628300305665 /* ViewController.m in Sources */,
+				CD4927F31846C2D500E28B9A /* BZHTTPRequestOperation.m in Sources */,
+				CDFD35F9182E628300305665 /* AppDelegate.m in Sources */,
+				CDFD35F5182E628300305665 /* main.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CDFD3602182E628300305665 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CDFD3614182E628300305665 /* MutualAuthTestHarnessTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		CDFD360C182E628300305665 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = CDFD35E4182E628300305665 /* MutualAuthTestHarness */;
+			targetProxy = CDFD360B182E628300305665 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		CDFD35F1182E628300305665 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				CDFD35F2182E628300305665 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		CDFD35FA182E628300305665 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				CDFD35FB182E628300305665 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		CDFD3610182E628300305665 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				CDFD3611182E628300305665 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		CDFD3615182E628300305665 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		CDFD3616182E628300305665 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				ENABLE_NS_ASSERTIONS = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		CDFD3618182E628300305665 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 8039E7AFDBB24DB7AF994D76 /* Pods.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "MutualAuthTestHarness/MutualAuthTestHarness-Prefix.pch";
+				INFOPLIST_FILE = "MutualAuthTestHarness/MutualAuthTestHarness-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		CDFD3619182E628300305665 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 8039E7AFDBB24DB7AF994D76 /* Pods.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "MutualAuthTestHarness/MutualAuthTestHarness-Prefix.pch";
+				INFOPLIST_FILE = "MutualAuthTestHarness/MutualAuthTestHarness-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+		CDFD361B182E628300305665 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/MutualAuthTestHarness.app/MutualAuthTestHarness";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "MutualAuthTestHarness/MutualAuthTestHarness-Prefix.pch";
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = "MutualAuthTestHarnessTests/MutualAuthTestHarnessTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Debug;
+		};
+		CDFD361C182E628300305665 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/MutualAuthTestHarness.app/MutualAuthTestHarness";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "MutualAuthTestHarness/MutualAuthTestHarness-Prefix.pch";
+				INFOPLIST_FILE = "MutualAuthTestHarnessTests/MutualAuthTestHarnessTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		CDFD35E0182E628300305665 /* Build configuration list for PBXProject "MutualAuthTestHarness" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				CDFD3615182E628300305665 /* Debug */,
+				CDFD3616182E628300305665 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		CDFD3617182E628300305665 /* Build configuration list for PBXNativeTarget "MutualAuthTestHarness" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				CDFD3618182E628300305665 /* Debug */,
+				CDFD3619182E628300305665 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		CDFD361A182E628300305665 /* Build configuration list for PBXNativeTarget "MutualAuthTestHarnessTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				CDFD361B182E628300305665 /* Debug */,
+				CDFD361C182E628300305665 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = CDFD35DD182E628300305665 /* Project object */;
+}
