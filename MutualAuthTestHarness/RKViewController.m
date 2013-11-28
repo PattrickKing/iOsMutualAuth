@@ -8,7 +8,6 @@
 
 #import "RKViewController.h"
 #import "BZHTTPRequestOperation.h"
-#import "BZHTTPClient.h"
 #import "BZUser.h"
 #import <RestKit/RestKit.h>
 #import <AFNetworking/AFHTTPRequestOperation.h>
