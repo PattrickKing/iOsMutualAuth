@@ -18,6 +18,7 @@
 		CD992FEB1844C906005B962D /* buzzServer.der in Resources */ = {isa = PBXBuildFile; fileRef = CD992FEA1844C906005B962D /* buzzServer.der */; };
 		CDB292B4184765D400415EBA /* BZUser.m in Sources */ = {isa = PBXBuildFile; fileRef = CDB292B3184765D400415EBA /* BZUser.m */; };
 		CDB292B71847733E00415EBA /* MappingProvider.m in Sources */ = {isa = PBXBuildFile; fileRef = CDB292B61847733E00415EBA /* MappingProvider.m */; };
+		CDB292BA1848A29D00415EBA /* RKObjectManagerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CDB292B91848A29D00415EBA /* RKObjectManagerViewController.m */; };
 		CDFD35E9182E628300305665 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CDFD35E8182E628300305665 /* Foundation.framework */; };
 		CDFD35EB182E628300305665 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CDFD35EA182E628300305665 /* CoreGraphics.framework */; };
 		CDFD35ED182E628300305665 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CDFD35EC182E628300305665 /* UIKit.framework */; };
@@ -63,6 +64,8 @@
 		CDB292B3184765D400415EBA /* BZUser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BZUser.m; sourceTree = "<group>"; };
 		CDB292B51847733E00415EBA /* MappingProvider.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MappingProvider.h; sourceTree = "<group>"; };
 		CDB292B61847733E00415EBA /* MappingProvider.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MappingProvider.m; sourceTree = "<group>"; };
+		CDB292B81848A29D00415EBA /* RKObjectManagerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RKObjectManagerViewController.h; sourceTree = "<group>"; };
+		CDB292B91848A29D00415EBA /* RKObjectManagerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RKObjectManagerViewController.m; sourceTree = "<group>"; };
 		CDFD35E5182E628300305665 /* MutualAuthTestHarness.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MutualAuthTestHarness.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CDFD35E8182E628300305665 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		CDFD35EA182E628300305665 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -174,6 +177,8 @@
 				CDB292B3184765D400415EBA /* BZUser.m */,
 				CDB292B51847733E00415EBA /* MappingProvider.h */,
 				CDB292B61847733E00415EBA /* MappingProvider.m */,
+				CDB292B81848A29D00415EBA /* RKObjectManagerViewController.h */,
+				CDB292B91848A29D00415EBA /* RKObjectManagerViewController.m */,
 			);
 			path = MutualAuthTestHarness;
 			sourceTree = "<group>";
@@ -346,6 +351,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CDB292BA1848A29D00415EBA /* RKObjectManagerViewController.m in Sources */,
 				CD4927F61846D22500E28B9A /* RKViewController.m in Sources */,
 				CDFD35FF182E628300305665 /* ViewController.m in Sources */,
 				CD4927F31846C2D500E28B9A /* BZHTTPRequestOperation.m in Sources */,

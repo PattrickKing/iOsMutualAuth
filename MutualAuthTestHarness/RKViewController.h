@@ -9,12 +9,12 @@
 #import <UIKit/UIKit.h>
 
 @interface RKViewController : UIViewController
+
 @property (weak, nonatomic) IBOutlet UILabel *FirstNameLabel;
 @property (weak, nonatomic) IBOutlet UILabel *LastNameLabel;
 @property (weak, nonatomic) IBOutlet UILabel *EmailLabel;
 
-
-
+- (IBAction)ForwardButton:(id)sender;
 - (IBAction)RKCallServiceButton:(id)sender;
 
 @end
